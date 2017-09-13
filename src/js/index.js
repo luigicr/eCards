@@ -1,4 +1,4 @@
-var templates = require('./lib/templates.js');
+var templates = require('../../dist/lib/templates.js');
 
 var tpl1 = templates['es-tarifa-unica'], // eslint-disable-line one-var
   resultHtml = tpl1();

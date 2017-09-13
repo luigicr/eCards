@@ -100,6 +100,7 @@ gulp.task('js', function () {
 
   return gulp.src([js.in])
     .pipe(concat('script.js'))
+    .pipe(browserify({ insertGlobals: true }))
     .pipe(gulp.dest(js.out));
 });
 
