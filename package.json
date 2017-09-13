@@ -1,0 +1,52 @@
+{
+  "name": "eCards",
+  "version": "1.0.0",
+  "description": "Boilerplate for accessibility tests from real world examples",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm-run-all --sequential gulp hellomessage",
+    "start": "npm-run-all open:src",
+    "hellomessage": "node server/startMessage.js",
+    "gulp": "gulp",
+    "open:src": "node ./server/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luigicr/eCards.git"
+  },
+  "keywords": [
+    "accesibility",
+    "boilerplate",
+    "html",
+    "css",
+    "js"
+  ],
+  "author": "Luigi",
+  "license": "UNLICENSED",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/luigicr/eCards.git/issues"
+  },
+  "homepage": "https://github.com/luigicr/eCards.git#readme",
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "del": "^3.0.0",
+    "express": "^4.15.3",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^4.0.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-include": "^2.3.1",
+    "gulp-inject": "^4.2.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-underscore-template": "^1.0.0",
+    "jquery": "^3.2.1",
+    "npm-run-all": "^4.0.2",
+    "open": "0.0.5",
+    "stream-series": "^0.1.1"
+  }
+}
