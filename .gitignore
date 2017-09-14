@@ -58,3 +58,5 @@ typings/
 # dotenv environment variables file
 .env
 
+# eslint report
+report-es-lint.html
