@@ -7,7 +7,205 @@
   <!-- endinject -->
 </head>
 <body>
+<<<<<<< Updated upstream
 	<h1></h1>
+=======
+  <div class="container">
+    <div class="page-header">
+      <h2>eCard</h2>
+      <p>eCard template generator for Accenture</p>
+    </div>
+    <!-- TEMPLATE SELECTOR AREA -->
+    <div class="row tpl-listbox-container">
+      <div class="col-xs-6">
+        <h3>Templates E-card Pricing</h3>
+        <div class="dropdown" >
+          <button class="btn btn-default dropdown-toggle" type="button" id="tpl-listbox-pricing" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
+            Select template
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="tpl-listbox-pricing">
+            <li class="active"><a href="#one-destiny-fare" data-toggle="tab">un destino, una tarifa</a></li>
+            <li><a href="#" data-toggle="tab">clase económica o ejecutiva</a></li>
+            <li><a href="#" data-toggle="tab">destinos impares, una o más tarifas</a></li>
+            <li><a href="#" data-toggle="tab">destinos pares, una o más tarifas</a></li>
+            <li><a href="#" data-toggle="tab">clase económica o ejecutiva, destinos impares</a></li>
+            <li><a href="#" data-toggle="tab">clase económica o ejecutiva, destinos pares</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <h3>Templates E-card Pricing Co-branding</h3>
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="tpl-listbox-branding" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Select template
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="tpl-listbox-branding">
+            <li><a href="#" data-toggle="tab">co-branding: un destino, una tarifa </a></li>
+            <li><a href="#" data-toggle="tab" data-toggle="tab">co-branding: destinos impares, una o más tarifas</a></li>
+            <li><a href="#" data-toggle="tab">co-branding: destinos pares, una o más tarifas</a></li>
+            <li><a href="#" data-toggle="tab">co-branding: clase económica o ejecutiva, destinos impares</a></li>
+            <li><a href="#" data-toggle="tab">co-branding: clase económica o ejecutiva, destinos pares</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- END: TEMPLATE SELECTOR AREA -->
+    <hr>
+    <div class="row tab-content">
+      <div role="tabpanel" class="tab-pane col-xs-12 active" id="one-destiny-fare">
+        <form>
+          <!-- UTM -->
+          <fieldset>
+            <legend>UTM</legend>
+            <div class="form-group">
+              <label for="tpl-url">UTM</label>
+              <input type="text" class="form-control" id="tpl-url" placeholder="UTM">
+            </div>
+          </fieldset>
+
+          <!-- HEADER -->
+          <fieldset>
+            <legend>Header section</legend>
+            <div class="row">
+              <div class="col-xs-6 form-group">
+                <label for="tpl-header">Header text</label>
+                <input type="text" class="form-control" id="tpl-header" placeholder="Header text">
+              </div>
+              <div class="col-xs-6"><a href="#" id="">Puedes abrir este mensaje en tu...</a></div>
+              <div class="col-xs-12">
+                  Avianca LOGO | STAR ALLIANCE
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- JUMBOTRON -->
+          <fieldset>
+            <legend>Jumbotron (Área Roja)</legend>
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="headline-content">
+                  <div class="row" data-item="0">
+                    <div class="form-group col-xs-10">
+                      <label for="tpl-headline">Headline</label>
+                      <input type="text" class="form-control" id="tpl-headline" placeholder="Headline">
+                    </div>
+                    <div class="col-xs-2 form-group">
+                      <button type="button" title="Agregar otro headline" class="btn btn-default pull-right add-headline add-item">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sub-headline-content">
+                  <div class="row" data-item="0">
+                    <div class="form-group col-xs-10">
+                      <label for="tpl-sub-headline">Sub Headline</label>
+                      <input type="text" class="form-control" id="tpl-sub-headline" placeholder="Sub Headline">
+                    </div>
+
+                    <div class="col-xs-2 form-group">
+                      <button type="button" title="Agregar otro sub headline" class="btn btn-default pull-right add-sub-headline add-item">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="headline-price-content">
+                  <div class="row" data-item="0">
+                    <div class="form-group col-xs-10">
+                      <label for="tpl-headline-price">Precio</label>
+                      <input type="text" class="form-control" id="tpl-headline-price" placeholder="Precio">
+                    </div>
+                    <div class="col-xs-2 form-group">
+                      <button type="button" title="Agregar otro precio" class="btn btn-default pull-right add-headline-price add-item">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="form-group">
+                  <label for="tpl-headline-btn">Label del botón</label>
+                  <input type="text" class="form-control" id="tpl-headline-btn" placeholder="Botón">
+                </div>
+              </div>
+              <div class="col-xs-6">
+
+                <div class="form-group">
+                  <label for="tpl-headline-image">Imagen</label>
+                  <input type="file" class="form-control" id="tpl-headline-image" placeholder="Imagen">
+                </div>
+
+
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- CONTENT -->
+          <fieldset>
+            <legend>Área Informátiva</legend>
+            <div class="info-content">
+              <div class="row" data-item="0">
+                <div class="form-group col-xs-10">
+                  <label for="tpl-content">Infomación</label>
+                  <input type="text" class="form-control" id="tpl-content" placeholder="Infomación">
+                </div>
+                <div class="col-xs-2 form-group">
+                  <button type="button" title="Agregar otra información" class="btn btn-default pull-right add-info add-item">
+                    <span class="glyphicon glyphicon-plus"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- SOCIAL -->
+          <fieldset>
+            <legend>Área de redes sociales</legend>
+            <p><a href="avianca.com">Avianca.com</a> FB TW INSTA YT <a href="lifemiles.com">LifeMiles</a></p>
+            <p>Para recibir nuestros mensajes, guarda...</p>
+          </fieldset>
+
+          <!-- TERMS & CODITIONS -->
+          <fieldset>
+            <legend>Términos y Condiciones</legend>
+            <div class="row" data-item="0">
+              <div class="form-group col-xs-10">
+                <label for="tpl-headline-1">Headline 1</label>
+                <input type="text" class="form-control" id="tpl-headline-1" placeholder="Headline 1">
+              </div>
+              <div class="col-xs-2 form-group">
+                <button type="button" title="Agregar otro término o condicion" class="btn btn-default pull-right add-term add-item">
+                  <span class="glyphicon glyphicon-plus"></span>
+                </button>
+              </div>
+            </div>
+
+            <script id="hidden-fligth-itinerary" type="text/x-custom-template"/>
+            </script>
+          </fieldset>
+          <!-- FOOTER -->
+
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+
+      <div role="tabpanel col-xs-12 " class="tab-pane" id="one-destiny-fare">
+
+      </div>
+    </div>
+  </div>
+
+>>>>>>> Stashed changes
   <!-- inject:js -->
   <!-- endinject -->
 </body>

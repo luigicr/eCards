@@ -87,7 +87,7 @@ gulp.task('sass', function () {
 });
 
 // compile js vendor
-gulp.task('js', function () {
+gulp.task('js', ['templates'], function () {
   'use strict';
 
   gulp.src([
@@ -130,7 +130,7 @@ gulp.task('images', function () {
 gulp.task('templates', function () {
   'use strict';
 
-  return gulp.src('src/templates/*.html')
+  return gulp.src('src/templates/**/*.html')
     .pipe(htmlmin({
       collapseWhitespace: true,
       conservativeCollapse: true
@@ -140,7 +140,7 @@ gulp.task('templates', function () {
     .pipe(gulp.dest('dist/lib/'));
 });
 
-gulp.task('html', ['sassVendor', 'sass', 'js', 'es-lint', 'images', 'templates'], function () {
+gulp.task('html', ['templates', 'sassVendor', 'sass', 'js', 'es-lint', 'images'], function () {
   'use strict';
 
   var vendorCss = gulp.src(['dist/css/vendor/**/*.css'], { read: false }),
