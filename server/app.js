@@ -90,7 +90,6 @@ app.listen(port, function (err) {
   if (err) {
       console.log(err);
     } else {
-      ecardsGenerator.unDestinoUnaTarifa();
       console.log('Example app listening on port ' + port + '!');
       open('http://localhost:' + port);
     }
