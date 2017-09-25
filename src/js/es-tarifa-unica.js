@@ -164,7 +164,8 @@ $form.on('submit', function (e) {
     parags.push({ text: el.value, bold: strong[index].value });
   });
 
-  objTest.img = $image.attr('src');
+  objTest.img = $fileImage[0].files[0].name;
+  objTest.imgBase64 = $image.attr('src');
   objTest.titlePrice = prices;
   objTest.paragraphs = parags;
 

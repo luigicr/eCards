@@ -36,8 +36,8 @@ app.get('/', function (req, res, next) {
 
 app.post('/generate', function(req, res) {
   console.log(req.body);
-    ecardsGenerator.unDestinoUnaTarifa(req.body);
-    res.end();
+  ecardsGenerator.unDestinoUnaTarifa(req.body);
+  res.end();
 });
 
 app.listen(port, function (err) {
