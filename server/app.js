@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, '../dist')));
 app.use('/dist/css', express.static(path.join(__dirname, '../dist/css')));
 app.use('/dist/js', express.static(path.join(__dirname, '../dist/js')));
 
-app.use(bodyParser.json()); 
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function (req, res, next) {
@@ -35,55 +35,50 @@ app.get('/', function (req, res, next) {
 });
 
 app.post('/generate', function(req, res) {
-    var data = { 
-      'titleTop': entities.normalizeXML('Viaja a Colombia desde USD 549'),
-      'utm': 'http://www.google.com',
+  console.log(req.body);
+  console.log(req.body.titlePrice);
+
+  for (var i = req.body.titlePrice.length - 1; i >= 0; i--) {
+    console.log(req.body.titlePrice[i].currency);
+  };
+
+  console.log(req.body.titlePrice[0]);
+
+    var data = {
+      'titleTop': 'entities.normalizeXML(req.body.titleTop)',
+      'utm': 'req.body.utm',
       'img': 'http://images-aviancataca.com/mail/images/ecomm/far/avianca/avmail-bnr-T22-demo.jpg',
       'titleBanner':  [
-        entities.normalizeXML('Viaja a Colombia'),
-        entities.normalizeXML('desde Buenos Aires')
+        'entities.normalizeXML(req.body.titleBanner)',
+        'entities.normalizeXML(req.body.titleBanner1)'
       ],
       'subtitleBanner': [
-        entities.normalizeXML('viaja vía Lima o Bogotá'),
-        entities.normalizeXML('con tarifas pensadas para ti desde')
+        'entities.normalizeXML(req.body.subtitleBanner)',
+        'entities.normalizeXML(req.body.subtitleBanner1)'
       ],
       'titlePrice': [
         {
           currency: 'USD',
-          price: '549'
+          price: 'req.body.price'
         },
         {
           currency: 'ARS',
-          price: '8.400'
+          price: 'req.body.price1'
         }
       ],
       'paragraphs': [
         {
-          text: entities.normalizeXML('Promoción válida para comprar hasta el 30 de octubre de 2017. Impuestos y cargos incluídos.'),
+          text: 'entities.normalizeXML(req.body.text)',
           bold: false
         },
         {
-          text: entities.normalizeXML('Compra hasta el 30 de octubre de 2017'),
+          text: 'entities.normalizeXML(req.body.text1)',
           bold: true
         }
-      ],
-      'termAndCond': [
-        entities.normalizeXML('Estas tarifas aplican exclusivamente para compras realizadas en Avianca.com; si deseas hacerlo a través de otros canales aplica un cargo adicional.'),
-        entities.normalizeXML('Válido para compras en Costa Rica.'),
-        entities.normalizeXML('Viaja entre el 19 de mayo y el 27 de noviembre de 2017.'),
-        entities.normalizeXML('Las fechas de vuelo dependen del destino seleccionado.'),
-        entities.normalizeXML('Las tarifas son ida y regreso, impuestos y cargos incluidos.'),
-        entities.normalizeXML('Las promociones no son acumulables.'),
-        entities.normalizeXML('Las tarifas promocionales descritas pueden ser combinadas con otras tarifas siempre y cuando se cumplan con todas las condiciones de la tarifa más restrictiva.'),
-        entities.normalizeXML('Otro tipo de descuentos no aplican para esta promoción. Tarifas sujetas a cambios sin previo aviso. No aplica para fechas específicas.'),
-        entities.normalizeXML('Tarifas sujetas a disponibilidad de cupo.'),
-        entities.normalizeXML('Los valores son aproximados. Aplica descuento para niños.'),
-        entities.normalizeXML('Aplica para vuelos operados por Avianca, TACA, y/o Lacsa.'),
-        entities.normalizeXML('Compra en Avianca.com y conoce más términos y condiciones de viaje.'),
-        entities.normalizeXML('Que belleza handlebars')
       ]
     };
-    ecardsGenerator.unDestinoUnaTarifa(data,'es');
+    ecardsGenerator.unDestinoUnaTarifa(req.body);
+    res.end();
 });
 
 app.listen(port, function (err) {

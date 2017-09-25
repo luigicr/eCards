@@ -1,8 +1,11 @@
-/* globals window, document, $ */
+/* globals window, document, $, _ */
+/* eslint-disable no-console */
 (function (root) {
   'use strict';
+  var test;
 
   root.eCard = {
+    test: test,
     init: function () {
       return;
     },
@@ -51,6 +54,35 @@
       if (count < maxRows) {
         $container.find('.add-item').removeClass('hidden');
       }
+    },
+
+    serializeAll: function (data) {
+      var serialized = [],
+        price = [];
+
+
+
+      $(data).each(function (index, item) {
+        if (item.name !== 'titlePrice') {
+          serialized.push(item);
+        } else {
+          price.push(item);
+        }
+      });
+
+      price = _.groupBy(price, function (val, index) {
+        return Math.floor(index / 2);
+      });
+
+      _.each(price, function (el) {
+        serialized.push({ name: 'titlePrice', value: { currency: el[0].value, price: el[1].value } });
+      });
+
+      console.log(serialized);
+
+      this.test = data;
+
+      return serialized;
     }
   };
 }(window));

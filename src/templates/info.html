@@ -1,7 +1,10 @@
 <div class="row" data-item="<%= value %>">
-  <div class="form-group col-xs-10">
+  <div class="form-group col-xs-8">
     <label for="tpl-content<%= value %>">Información</label>
-    <input type="text" class="form-control" id="tpl-content<%= value %>" placeholder="Información">
+    <input type="text" name="paragraphs" class="form-control" id="tpl-content<%= value %>" placeholder="Información">
+  </div>
+  <div class="checkbox col-xs-2">
+    <label><input type="checkbox" name="paragraphs">Strong</label>
   </div>
   <div class="col-xs-2 form-group">
     <button type="button" title="Remover Información" class="btn btn-default pull-right remove-info remove-item">

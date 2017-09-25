@@ -52,13 +52,24 @@
     <hr>
     <div class="row tab-content">
       <div role="tabpanel" class="tab-pane col-xs-12 active" id="one-destiny-fare">
-        <form action="/generate" method="post">
-          <!-- UTM -->
+        <!-- <form  action="/generate" method="post"> -->
+        <form class="form-one-fare">
+          <!-- UTM Language -->
           <fieldset>
             <legend>UTM</legend>
-            <div class="form-group">
-              <label for="tpl-url">UTM</label>
-              <input type="text" class="form-control" id="tpl-url" placeholder="UTM">
+            <div class="row">
+              <div class="form-group col-xs-6">
+                <label for="tpl-url">UTM</label>
+                <input type="text" name="utm" class="form-control" id="tpl-url" placeholder="UTM">
+              </div>
+              <div class="form-group col-xs-6">
+                <label for="tpl-language">Select list:</label>
+                <select id="tpl-language" name="language" class="form-control">
+                  <option value="es">Español</option>
+                  <option value="en">Inglés</option>
+                  <option value="pt">Portugues</option>
+                </select>
+              </div>
             </div>
           </fieldset>
 
@@ -68,7 +79,7 @@
             <div class="row">
               <div class="col-xs-6 form-group">
                 <label for="tpl-header">Header text</label>
-                <input type="text" class="form-control" id="tpl-header" placeholder="Header text">
+                <input type="text" name="titleTop" class="form-control" id="tpl-header" placeholder="Header text">
               </div>
               <div class="col-xs-6"><a href="#" id="">Puedes abrir este mensaje en tu...</a></div>
               <div class="col-xs-12">
@@ -86,7 +97,7 @@
                   <div class="row" data-item="0">
                     <div class="form-group col-xs-10">
                       <label for="tpl-headline">Headline</label>
-                      <input type="text" class="form-control" id="tpl-headline" placeholder="Headline">
+                      <input type="text" name="titleBanner" class="form-control" id="tpl-headline" placeholder="Headline">
                     </div>
                     <div class="col-xs-2 form-group">
                       <button type="button" title="Agregar otro headline" class="btn btn-default pull-right add-headline add-item">
@@ -100,7 +111,7 @@
                   <div class="row" data-item="0">
                     <div class="form-group col-xs-10">
                       <label for="tpl-sub-headline">Sub Headline</label>
-                      <input type="text" class="form-control" id="tpl-sub-headline" placeholder="Sub Headline">
+                      <input type="text" name="subtitleBanner" class="form-control" id="tpl-sub-headline" placeholder="Sub Headline">
                     </div>
 
                     <div class="col-xs-2 form-group">
@@ -110,11 +121,16 @@
                     </div>
                   </div>
                 </div>
+
                 <div class="headline-price-content">
                   <div class="row" data-item="0">
-                    <div class="form-group col-xs-10">
+                    <div class="form-group col-xs-5">
+                      <label for="tpl-headline-currency">Moneda</label>
+                      <input type="text" name="titlePrice" class="form-control" id="tpl-headline-currency" placeholder="Moneda">
+                    </div>
+                    <div class="form-group col-xs-5">
                       <label for="tpl-headline-price">Precio</label>
-                      <input type="text" class="form-control" id="tpl-headline-price" placeholder="Precio">
+                      <input type="text" name="titlePrice" class="form-control" id="tpl-headline-price" placeholder="Precio">
                     </div>
                     <div class="col-xs-2 form-group">
                       <button type="button" title="Agregar otro precio" class="btn btn-default pull-right add-headline-price add-item">
@@ -123,17 +139,12 @@
                     </div>
                   </div>
                 </div>
-
-                <div class="form-group">
-                  <label for="tpl-headline-btn">Label del botón</label>
-                  <input type="text" class="form-control" id="tpl-headline-btn" placeholder="Botón">
-                </div>
               </div>
               <div class="col-xs-6">
 
                 <div class="form-group">
                   <label for="tpl-headline-image">Imagen</label>
-                  <input type="file" class="form-control" id="tpl-headline-image" placeholder="Imagen">
+                  <input type="file" name="tpl-headline-image" class="form-control" id="tpl-headline-image" placeholder="Imagen">
                 </div>
 
 
@@ -146,9 +157,12 @@
             <legend>Área Informátiva</legend>
             <div class="info-content">
               <div class="row" data-item="0">
-                <div class="form-group col-xs-10">
+                <div class="form-group col-xs-8">
                   <label for="tpl-content">Infomación</label>
-                  <input type="text" class="form-control" id="tpl-content" placeholder="Infomación">
+                  <input type="text" name="paragraphs" class="form-control" id="tpl-content" placeholder="Infomación">
+                </div>
+                <div class="checkbox col-xs-2">
+                  <label><input type="checkbox" name="paragraphs">Strong</label>
                 </div>
                 <div class="col-xs-2 form-group">
                   <button type="button" title="Agregar otra información" class="btn btn-default pull-right add-info add-item">
@@ -160,11 +174,11 @@
           </fieldset>
 
           <!-- SOCIAL -->
-          <fieldset>
+          <!-- <fieldset>
             <legend>Área de redes sociales</legend>
             <p><a href="avianca.com">Avianca.com</a> FB TW INSTA YT <a href="lifemiles.com">LifeMiles</a></p>
             <p>Para recibir nuestros mensajes, guarda...</p>
-          </fieldset>
+          </fieldset> -->
 
           <!-- TERMS & CODITIONS -->
           <fieldset>
@@ -173,7 +187,7 @@
               <div class="row" data-item="0">
               <div class="form-group col-xs-10">
                 <label for="tpl-terms">Términos y condiciones</label>
-                <input type="text" class="form-control" id="tpl-terms" placeholder="Términos y condiciones">
+                <input type="text" name="termAndCond" class="form-control" id="tpl-terms" placeholder="Términos y condiciones">
               </div>
               <div class="col-xs-2 form-group">
                 <button type="button" title="Agregar otro término o condicion" class="btn btn-default pull-right add-terms add-item">
@@ -187,8 +201,7 @@
             </script>
           </fieldset>
           <!-- FOOTER -->
-
-          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="submit" class="btn btn-default btn-one-fare">Submit</button>
         </form>
       </div>
 

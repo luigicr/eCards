@@ -1,4 +1,5 @@
-/* global $, undefined, eCard */
+/* global $, undefined, eCard, _ */
+/* eslint-disable no-console */
 var templates = require('../../dist/lib/templates.js');
 
 var templateHeadline = templates.headline, // eslint-disable-line one-var
@@ -16,11 +17,7 @@ var templateHeadline = templates.headline, // eslint-disable-line one-var
   $infoContent = $('.info-content'),
   $addTerms = $('.add-terms'),
   $termsContent = $('.terms-content'),
-  tpl1 = templates['es-tarifa-unica'], // eslint-disable-line one-var
-  resultHtml = tpl1();
-
-console.log(resultHtml); // eslint-disable-line no-console
-
+  $form = $('.form-one-fare');
 
 //
 // ONE DESTINY, ONE FARE
@@ -93,4 +90,116 @@ $termsContent.on('click', '.remove-item', function __handler__(e) {
 
   e.preventDefault();
   eCard.removeRow(this, $termsContent, 20);
+});
+
+$form.on('submit', function (e) {
+  'use strict';
+  var dataForm = $(this).serializeArray(),
+    serialized,
+    objTest = {},
+    price = [],
+    prices = [],
+    parag = [],
+    parags = [],
+    strong;
+
+  e.preventDefault();
+
+  strong = $(this).find('input[type=checkbox]').map(function () {
+    return { value: this.checked };
+  });
+  // HEADLINE
+  // counter = _.countBy(dataForm, function (item) {
+  //   return item.name === 'titleBanner';
+  // }).true;
+
+  // for (counter; counter <= 2; counter++) {
+  //   serialized.push({ name: 'titleBanner', value: null });
+  // }
+
+  // // SUB HEADLINE
+  // counter = _.countBy(dataForm, function (item) {
+  //   return item.name === 'subtitleBanner';
+  // }).true;
+
+  // for (counter; counter <= 2; counter++) {
+  //   serialized.push({ name: 'subtitleBanner', value: null });
+  // }
+
+  // // SUB HEADLINE
+  // counter = _.countBy(dataForm, function (item) {
+  //   return item.name === 'subtitleBanner';
+  // }).true;
+
+  // for (counter; counter <= 2; counter++) {
+  //   serialized.push({ name: 'subtitleBanner', value: null });
+  // }
+
+  // // PRICE
+
+  // // INFO
+
+  // // TERMS AND CONDITIONS
+  // counter = _.countBy(dataForm, function (item) {
+  //   return item.name === 'termAndCond';
+  // }).true;
+
+  // for (counter; counter <= 2; counter++) {
+  //   serialized.push({ name: 'termAndCond', value: null });
+  // }
+  serialized = $(dataForm).filter(function (index, item) {
+    return item.value !== '';
+  });
+
+  $(serialized).each(function (index, el) {
+    if (el.name === 'titlePrice') {
+      price.push(el);
+      return true;
+    }
+
+    if (el.name === 'paragraphs') {
+      if (el.value !== 'on') {
+        parag.push(el);
+      }
+      return true;
+    }
+
+    if (el.name === 'titleBanner' ||
+      el.name === 'subtitleBanner' ||
+      el.name === 'termAndCond') {
+      if (!objTest[el.name]) {
+
+        objTest[el.name] = [];
+      }
+
+      objTest[el.name].push(el.value);
+    } else {
+      objTest[el.name] = el.value;
+    }
+
+    return true;
+  });
+  console.log(objTest);
+
+  price = _.groupBy(price, function (val, index) {
+    return Math.floor(index / 2);
+  });
+
+  _.each(price, function (el) {
+    prices.push({ currency: el[0].value, price: el[1].value });
+  });
+
+  _.each(parag, function (el, index) {
+    parags.push({ text: el.value, bold: strong[index].value });
+  });
+
+  objTest.titlePrice = prices;
+  objTest.paragraphs = parags;
+
+  $.ajax({
+    url: '/generate',
+    type: 'POST',
+    data: objTest,
+    dataType: 'application/json'
+  });
 });

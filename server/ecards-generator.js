@@ -3,9 +3,9 @@ var fs = require('fs');
 var entities = require('special-entities');
 
 module.exports = {
-	unDestinoUnaTarifa: function(data, lang) {
-		if(lang === 'es'){
-			var source = fs.readFileSync('../tmp-ecards/es/1-un-destino-una-tarifa.html', 'utf-8');
+	unDestinoUnaTarifa: function(data) {
+		if(data.language === 'es') {
+			var source = fs.readFileSync('./tmp-ecards/es/1-un-destino-una-tarifa.html', 'utf-8');
 			var template = Handlebars.compile(source);
 			var result = template(data);
 
@@ -25,7 +25,7 @@ module.exports = {
 			titleBanner = entities.normalizeXML('Viaja desde Colombia hacia Washington D.C.'),
 			subtitleBanner = entities.normalizeXML('viaja vía Lima o Bogotá con tarifas pensadas para ti desde', "html");
 
-		var data = { 
+		var data = {
 			'titleTop': titleTop,
 			'utm': utm,
 			'titleBanner': titleBanner,
