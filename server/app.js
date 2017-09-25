@@ -36,47 +36,6 @@ app.get('/', function (req, res, next) {
 
 app.post('/generate', function(req, res) {
   console.log(req.body);
-  console.log(req.body.titlePrice);
-
-  for (var i = req.body.titlePrice.length - 1; i >= 0; i--) {
-    console.log(req.body.titlePrice[i].currency);
-  };
-
-  console.log(req.body.titlePrice[0]);
-
-    var data = {
-      'titleTop': 'entities.normalizeXML(req.body.titleTop)',
-      'utm': 'req.body.utm',
-      'img': 'http://images-aviancataca.com/mail/images/ecomm/far/avianca/avmail-bnr-T22-demo.jpg',
-      'titleBanner':  [
-        'entities.normalizeXML(req.body.titleBanner)',
-        'entities.normalizeXML(req.body.titleBanner1)'
-      ],
-      'subtitleBanner': [
-        'entities.normalizeXML(req.body.subtitleBanner)',
-        'entities.normalizeXML(req.body.subtitleBanner1)'
-      ],
-      'titlePrice': [
-        {
-          currency: 'USD',
-          price: 'req.body.price'
-        },
-        {
-          currency: 'ARS',
-          price: 'req.body.price1'
-        }
-      ],
-      'paragraphs': [
-        {
-          text: 'entities.normalizeXML(req.body.text)',
-          bold: false
-        },
-        {
-          text: 'entities.normalizeXML(req.body.text1)',
-          bold: true
-        }
-      ]
-    };
     ecardsGenerator.unDestinoUnaTarifa(req.body);
     res.end();
 });

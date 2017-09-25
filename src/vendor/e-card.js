@@ -2,10 +2,12 @@
 /* eslint-disable no-console */
 (function (root) {
   'use strict';
-  var test;
+  var test,
+    reader;
 
   root.eCard = {
     test: test,
+    reader: reader,
     init: function () {
       return;
     },
@@ -83,6 +85,18 @@
       this.test = data;
 
       return serialized;
+    },
+
+    readURL: function (input, img) {
+      if (input.files && input.files[0]) {
+        reader = new FileReader();
+
+        reader.onload = function (e) {
+          img.attr('src', e.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+      }
     }
   };
 }(window));

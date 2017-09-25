@@ -8,8 +8,13 @@ module.exports = {
 			var source = fs.readFileSync('./tmp-ecards/es/1-un-destino-una-tarifa.html', 'utf-8');
 			var template = Handlebars.compile(source);
 			var result = template(data);
+      var dir = 'C:/eCards/';
 
-			fs.writeFile("eCard.html", result, function(err) {
+      if (!fs.existsSync(dir)){
+          fs.mkdirSync(dir);
+      }
+
+			fs.writeFile(dir + "eCard.html", result, function(err) {
 			    if(err) {
 			        return console.log(err);
 			    }

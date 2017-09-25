@@ -17,7 +17,9 @@ var templateHeadline = templates.headline, // eslint-disable-line one-var
   $infoContent = $('.info-content'),
   $addTerms = $('.add-terms'),
   $termsContent = $('.terms-content'),
-  $form = $('.form-one-fare');
+  $form = $('.form-one-fare'),
+  $fileImage = $('.tpl-headline-image'),
+  $image = $('.img-preview');
 
 //
 // ONE DESTINY, ONE FARE
@@ -92,6 +94,11 @@ $termsContent.on('click', '.remove-item', function __handler__(e) {
   eCard.removeRow(this, $termsContent, 20);
 });
 
+$fileImage.change(function () {
+  'use strict';
+  eCard.readURL(this, $image);
+});
+
 $form.on('submit', function (e) {
   'use strict';
   var dataForm = $(this).serializeArray(),
@@ -106,50 +113,14 @@ $form.on('submit', function (e) {
   e.preventDefault();
 
   strong = $(this).find('input[type=checkbox]').map(function () {
-    return { value: this.checked };
+    return { value: this.checked ? '1' : '' };
   });
-  // HEADLINE
-  // counter = _.countBy(dataForm, function (item) {
-  //   return item.name === 'titleBanner';
-  // }).true;
 
-  // for (counter; counter <= 2; counter++) {
-  //   serialized.push({ name: 'titleBanner', value: null });
-  // }
-
-  // // SUB HEADLINE
-  // counter = _.countBy(dataForm, function (item) {
-  //   return item.name === 'subtitleBanner';
-  // }).true;
-
-  // for (counter; counter <= 2; counter++) {
-  //   serialized.push({ name: 'subtitleBanner', value: null });
-  // }
-
-  // // SUB HEADLINE
-  // counter = _.countBy(dataForm, function (item) {
-  //   return item.name === 'subtitleBanner';
-  // }).true;
-
-  // for (counter; counter <= 2; counter++) {
-  //   serialized.push({ name: 'subtitleBanner', value: null });
-  // }
-
-  // // PRICE
-
-  // // INFO
-
-  // // TERMS AND CONDITIONS
-  // counter = _.countBy(dataForm, function (item) {
-  //   return item.name === 'termAndCond';
-  // }).true;
-
-  // for (counter; counter <= 2; counter++) {
-  //   serialized.push({ name: 'termAndCond', value: null });
-  // }
   serialized = $(dataForm).filter(function (index, item) {
     return item.value !== '';
   });
+
+
 
   $(serialized).each(function (index, el) {
     if (el.name === 'titlePrice') {
@@ -193,6 +164,7 @@ $form.on('submit', function (e) {
     parags.push({ text: el.value, bold: strong[index].value });
   });
 
+  objTest.img = $image.attr('src');
   objTest.titlePrice = prices;
   objTest.paragraphs = parags;
 
