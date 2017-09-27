@@ -19,7 +19,9 @@ var templateHeadline = templates.headline, // eslint-disable-line one-var
   $termsContent = $('.terms-content'),
   $form = $('.form-one-fare'),
   $fileImage = $('.tpl-headline-image'),
-  $image = $('.img-preview');
+  $image = $('.img-preview'),
+  $success = $('.success'),
+  $error = $('.error');
 
 //
 // ONE DESTINY, ONE FARE
@@ -120,8 +122,6 @@ $form.on('submit', function (e) {
     return item.value !== '';
   });
 
-
-
   $(serialized).each(function (index, el) {
     if (el.name === 'titlePrice') {
       price.push(el);
@@ -164,8 +164,11 @@ $form.on('submit', function (e) {
     parags.push({ text: el.value, bold: strong[index].value });
   });
 
-  objTest.img = $fileImage[0].files[0].name;
-  objTest.imgBase64 = $image.attr('src');
+  if ($fileImage[0].files[0]) {
+    objTest.img = $fileImage[0].files[0].name;
+    objTest.imgBase64 = $image.attr('src');
+  }
+
   objTest.titlePrice = prices;
   objTest.paragraphs = parags;
 
@@ -173,6 +176,12 @@ $form.on('submit', function (e) {
     url: '/generate',
     type: 'POST',
     data: objTest,
-    dataType: 'application/json'
+    datatype: 'json', // expecting JSON to be returned
+    success: function (result) {
+      $success.modal('show');
+    },
+    error: function (result) {
+      $error.modal('show');
+    }
   });
 });

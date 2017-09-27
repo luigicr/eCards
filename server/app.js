@@ -37,7 +37,9 @@ app.get('/', function (req, res, next) {
 app.post('/generate', function(req, res) {
   console.log(req.body);
   ecardsGenerator.unDestinoUnaTarifa(req.body);
-  res.end();
+  res.status(200).json({success: "Updated Successfully", status : 200});
+  // res.send({result:"success"});
+  // res.status(200).jsonp({ success: 'success' });
 });
 
 app.listen(port, function (err) {

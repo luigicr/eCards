@@ -11,11 +11,13 @@ module.exports = {
           fs.mkdirSync(dir);
       }
 
-      var image64 = data.imgBase64.replace(/^data:image\/\w+;base64,/, "");
-      var bitmap = new Buffer(image64, 'base64');
-      fs.writeFile(dir + data.img, bitmap, function(err) {
-        console.log(err);
-      });
+      if (data.imgBase64) {
+        var image64 = data.imgBase64.replace(/^data:image\/\w+;base64,/, "");
+        var bitmap = new Buffer(image64, 'base64');
+        fs.writeFile(dir + data.img, bitmap, function(err) {
+          console.log(err);
+        });
+      }
 
       var source = fs.readFileSync('./tmp-ecards/es/1-un-destino-una-tarifa.html', 'utf-8');
       var template = Handlebars.compile(source);
