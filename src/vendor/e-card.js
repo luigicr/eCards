@@ -139,6 +139,9 @@
 
       objTest.titlePrice = prices;
       objTest.paragraphs = parags;
+      objTest.template = form.data('template');
+
+      console.log(objTest.template);
 
       return objTest;
     },
