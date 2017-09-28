@@ -1,4 +1,4 @@
-/* global $, undefined, eCard, _, he */
+/* global $, undefined, eCard */
 /* eslint-disable no-console */
 var templates = require('../../src/lib/templates.js');
 
@@ -14,7 +14,6 @@ var templateHeadline = templates.headline, // eslint-disable-line one-var
   $termsContent = $('.terms-content'),
   $form = $('.form-one-fare'),
   $fileImage = $('.tpl-headline-image'),
-  $image = $('.img-preview'),
   $success = $('.success'),
   $folder = $('.folder'),
   $error = $('.error');
@@ -94,83 +93,18 @@ $termsContent.on('click', '.remove-item', function __handler__(e) {
 
 $fileImage.change(function () {
   'use strict';
-  eCard.readURL(this, $image);
+  eCard.imgTo64(this);
 });
 
 $form.on('submit', function (e) {
   'use strict';
-  var dataForm = $(this).serializeArray(),
-    serialized,
-    objTest = {},
-    price = [],
-    prices = [],
-    parag = [],
-    parags = [],
-    strong;
+  var checkboxs = $(this).find('input[type=checkbox]'),
+    img = $fileImage[0],
+    objTest;
 
   e.preventDefault();
 
-  strong = $(this).find('input[type=checkbox]').map(function () {
-    return { value: this.checked ? '1' : '' };
-  });
-
-  serialized = $(dataForm).filter(function (index, item) {
-    return item.value !== '';
-  });
-
-  $(serialized).each(function (index, el) {
-    if (el.name !== 'ecardName') {
-      el.value = he.encode(el.value);
-    }
-
-    if (el.name === 'titlePrice') {
-      price.push(el);
-      return true;
-    }
-
-    if (el.name === 'paragraphs') {
-      if (el.value !== 'on') {
-        parag.push(el);
-      }
-      return true;
-    }
-
-    if (el.name === 'titleBanner' ||
-      el.name === 'subtitleBanner' ||
-      el.name === 'termAndCond') {
-      if (!objTest[el.name]) {
-
-        objTest[el.name] = [];
-      }
-
-      objTest[el.name].push(el.value);
-    } else {
-      objTest[el.name] = el.value;
-    }
-
-    return true;
-  });
-  console.log(objTest);
-
-  price = _.groupBy(price, function (val, index) {
-    return Math.floor(index / 2);
-  });
-
-  _.each(price, function (el) {
-    prices.push({ currency: el[0].value, price: el[1].value });
-  });
-
-  _.each(parag, function (el, index) {
-    parags.push({ text: el.value, bold: strong[index].value });
-  });
-
-  if ($fileImage[0].files[0]) {
-    objTest.img = $fileImage[0].files[0].name;
-    objTest.imgBase64 = $image.attr('src');
-  }
-
-  objTest.titlePrice = prices;
-  objTest.paragraphs = parags;
+  objTest = eCard.serializeAll($(this), checkboxs, img);
 
   $.ajax({
     url: '/generate',
