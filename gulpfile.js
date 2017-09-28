@@ -24,7 +24,7 @@ var source = 'src/',
   // Bootstrap fonts source
   fonts = {
     in: [source + 'fonts/*.*', bootstrapSass.in + 'assets/fonts/**/*'],
-    out: dest + 'fonts/'
+    out: dest + 'css/fonts/'
   },
   // Our scss source folder: .scss files
   scss = {
@@ -94,6 +94,7 @@ gulp.task('js', ['templates'], function () {
     'node_modules/jquery/dist/jquery.js',
     'node_modules/underscore/underscore.js',
     'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
+    'node_modules/he/he.js',
     js.inVendor
   ]).pipe(uglify())
     .pipe(concat('vendor.js'))
@@ -137,10 +138,10 @@ gulp.task('templates', function () {
     }))
     .pipe(template())
     .pipe(concat('templates.js'))
-    .pipe(gulp.dest('dist/lib/'));
+    .pipe(gulp.dest('src/lib/'));
 });
 
-gulp.task('html', ['templates', 'sassVendor', 'sass', 'js', 'es-lint', 'images'], function () {
+gulp.task('html', ['sassVendor', 'sass', 'js', 'es-lint', 'images'], function () {
   'use strict';
 
   var vendorCss = gulp.src(['dist/css/vendor/**/*.css'], { read: false }),

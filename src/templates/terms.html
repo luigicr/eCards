@@ -3,8 +3,13 @@
     <label for="tpl-terms<%= value %>">Términos y condiciones</label>
     <input type="text" name="termAndCond" class="form-control" id="tpl-terms<%= value %>" placeholder="Términos y condiciones">
   </div>
-  <div class="col-xs-2 form-group">
-    <button type="button" title="Remover Términos y condiciones" class="btn btn-default pull-right remove-terms remove-item">
+  <div class="col-xs-1 form-group">
+    <button type="button" title="Agregar otro término o condición" class="btn btn-default btn-success pull-right add-terms add-item">
+      <span class="glyphicon glyphicon-plus"></span>
+    </button>
+  </div>
+  <div class="col-xs-1 form-group">
+    <button type="button" title="Remover Términos y condiciones" class="btn btn-default btn-danger pull-right remove-terms remove-item">
       <span class="glyphicon glyphicon-minus"></span>
     </button>
   </div>

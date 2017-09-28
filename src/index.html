@@ -10,7 +10,7 @@
   <div class="container">
     <div class="page-header">
       <h2>eCard</h2>
-      <p>Frankestein eCard template generator</p>
+      <img src="images/frankenstein-icon.png" class="img-responsive pull-left" alt=""><p>Frankestein eCard template generator</p>
     </div>
     <!-- TEMPLATE SELECTOR AREA -->
     <div class="row tpl-listbox-container">
@@ -58,12 +58,16 @@
           <fieldset>
             <legend>UTM</legend>
             <div class="row">
-              <div class="form-group col-xs-6">
+              <div class="form-group col-xs-4">
+                <label for="tpl-ecard-name">Folder Name</label>
+                <input type="text" name="ecardName" class="form-control" id="tpl-ecard-name" placeholder="Folder Name">
+              </div>
+              <div class="form-group col-xs-4">
                 <label for="tpl-url">UTM</label>
                 <input type="text" name="utm" class="form-control" id="tpl-url" placeholder="UTM">
               </div>
-              <div class="form-group col-xs-6">
-                <label for="tpl-language">Select list:</label>
+              <div class="form-group col-xs-4">
+                <label for="tpl-language">Idioma:</label>
                 <select id="tpl-language" name="language" class="form-control">
                   <option value="es">Español</option>
                   <option value="en">Inglés</option>
@@ -90,7 +94,7 @@
 
           <!-- JUMBOTRON -->
           <fieldset>
-            <legend>Jumbotron (Área Roja)</legend>
+            <legend>Banner (Área Roja)</legend>
             <div class="row">
               <div class="col-xs-6">
                 <div class="headline-content">
@@ -100,7 +104,7 @@
                       <input type="text" name="titleBanner" class="form-control" id="tpl-headline" placeholder="Headline">
                     </div>
                     <div class="col-xs-2 form-group">
-                      <button type="button" title="Agregar otro headline" class="btn btn-default pull-right add-headline add-item">
+                      <button type="button" title="Agregar otro headline" class="btn btn-default pull-right add-headline add-item btn-success">
                         <span class="glyphicon glyphicon-plus"></span>
                       </button>
                     </div>
@@ -115,7 +119,7 @@
                     </div>
 
                     <div class="col-xs-2 form-group">
-                      <button type="button" title="Agregar otro sub headline" class="btn btn-default pull-right add-sub-headline add-item">
+                      <button type="button" title="Agregar otro sub headline" class="btn btn-default btn-success pull-right add-sub-headline add-item">
                         <span class="glyphicon glyphicon-plus"></span>
                       </button>
                     </div>
@@ -133,7 +137,7 @@
                       <input type="text" name="titlePrice" class="form-control" id="tpl-headline-price" placeholder="Precio">
                     </div>
                     <div class="col-xs-2 form-group">
-                      <button type="button" title="Agregar otro precio" class="btn btn-default pull-right add-headline-price add-item">
+                      <button type="button" title="Agregar otro precio" class="btn btn-default btn-success pull-right add-headline-price add-item">
                         <span class="glyphicon glyphicon-plus"></span>
                       </button>
                     </div>
@@ -165,7 +169,7 @@
                   <label><input type="checkbox" name="paragraphs">Strong</label>
                 </div>
                 <div class="col-xs-2 form-group">
-                  <button type="button" title="Agregar otra información" class="btn btn-default pull-right add-info add-item">
+                  <button type="button" title="Agregar otra información" class="btn btn-default btn-success pull-right add-info add-item">
                     <span class="glyphicon glyphicon-plus"></span>
                   </button>
                 </div>
@@ -190,7 +194,7 @@
                 <input type="text" name="termAndCond" class="form-control" id="tpl-terms" placeholder="Términos y condiciones">
               </div>
               <div class="col-xs-2 form-group">
-                <button type="button" title="Agregar otro término o condicion" class="btn btn-default pull-right add-terms add-item">
+                <button type="button" title="Agregar otro término o condición" class="btn btn-default btn-success pull-right add-terms add-item">
                   <span class="glyphicon glyphicon-plus"></span>
                 </button>
               </div>
@@ -214,12 +218,12 @@
   <div class="modal fade success" id="success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header modal-header-success">
+        <div class="modal-header modal-header-success alert alert-success" role="alert">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h1>Weeeee!</h1>
+          <h1><span class="glyphicon glyphicon-saved" aria-hidden="true"></span>Weeeee!</h1>
         </div>
         <div class="modal-body">
-          <p>eCard creado en C:/eCards/</p>
+          <p>eCard creado en C:/eCards/<span class="folder"></span> </p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
@@ -232,12 +236,12 @@
   <div class="modal fade error" id="error" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header modal-header-error">
+        <div class="modal-header modal-header-error alert alert-danger" role="alert">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h1>Error!</h1>
+          <h1><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">Error!</h1>
         </div>
         <div class="modal-body">
-          <p>eCard creado en C:/eCards/</p>
+          <p>Oh snap! Algo salío mal...</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>

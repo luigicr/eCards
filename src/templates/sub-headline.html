@@ -3,8 +3,13 @@
     <label for="tpl-sub-headline-<%= value %>">Sub Headline</label>
     <input type="text" name="subtitleBanner" class="form-control" id="tpl-sub-headline-<%= value %>" placeholder="Sub Headline">
   </div>
-  <div class="col-xs-2 form-group">
-    <button type="button" title="Agregar otro Sub Headline" class="btn btn-default pull-right remove-sub-headline remove-item">
+  <div class="col-xs-1 form-group">
+    <button type="button" title="Agregar otro Sub Headline" class="btn btn-default btn-success pull-right add-sub-headline add-item">
+      <span class="glyphicon glyphicon-plus"></span>
+    </button>
+  </div>
+  <div class="col-xs-1 form-group">
+    <button type="button" title="Remover Sub Headline" class="btn btn-default btn-danger pull-right remove-sub-headline remove-item">
       <span class="glyphicon glyphicon-minus"></span>
     </button>
   </div>

@@ -1,32 +1,28 @@
-/* global $, undefined, eCard, _ */
+/* global $, undefined, eCard, _, he */
 /* eslint-disable no-console */
-var templates = require('../../dist/lib/templates.js');
+var templates = require('../../src/lib/templates.js');
 
 var templateHeadline = templates.headline, // eslint-disable-line one-var
   templateSubHeadline = templates['sub-headline'],
   templateHeadlinePrice = templates['headline-price'],
   templateInfo = templates.info,
   templateTerms = templates.terms,
-  $addHeadline = $('.add-headline'),
   $headlineContent = $('.headline-content'),
-  $addSubHeadline = $('.add-sub-headline'),
   $subHeadlineContent = $('.sub-headline-content'),
-  $addHeadlinePrice = $('.add-headline-price'),
   $headlinePriceContent = $('.headline-price-content'),
-  $addInfo = $('.add-info'),
   $infoContent = $('.info-content'),
-  $addTerms = $('.add-terms'),
   $termsContent = $('.terms-content'),
   $form = $('.form-one-fare'),
   $fileImage = $('.tpl-headline-image'),
   $image = $('.img-preview'),
   $success = $('.success'),
+  $folder = $('.folder'),
   $error = $('.error');
 
 //
 // ONE DESTINY, ONE FARE
 //
-$addHeadline.on('click', function __handler__(e) {
+$headlineContent.on('click', '.add-headline', function __handler__(e) {
   'use strict';
 
   e.preventDefault();
@@ -40,7 +36,7 @@ $headlineContent.on('click', '.remove-item', function __handler__(e) {
   eCard.removeRow(this, $headlineContent, 3);
 });
 
-$addSubHeadline.on('click', function __handler__(e) {
+$subHeadlineContent.on('click', '.add-sub-headline', function __handler__(e) {
   'use strict';
 
   e.preventDefault();
@@ -54,7 +50,7 @@ $subHeadlineContent.on('click', '.remove-item', function __handler__(e) {
   eCard.removeRow(this, $subHeadlineContent, 3);
 });
 
-$addHeadlinePrice.on('click', function __handler__(e) {
+$headlinePriceContent.on('click', '.add-headline-price', function __handler__(e) {
   'use strict';
 
   e.preventDefault();
@@ -68,7 +64,7 @@ $headlinePriceContent.on('click', '.remove-item', function __handler__(e) {
   eCard.removeRow(this, $headlinePriceContent, 3);
 });
 
-$addInfo.on('click', function __handler__(e) {
+$infoContent.on('click', '.add-info', function __handler__(e) {
   'use strict';
 
   e.preventDefault();
@@ -82,7 +78,7 @@ $infoContent.on('click', '.remove-item', function __handler__(e) {
   eCard.removeRow(this, $infoContent, 3);
 });
 
-$addTerms.on('click', function __handler__(e) {
+$termsContent.on('click', '.add-terms', function __handler__(e) {
   'use strict';
 
   e.preventDefault();
@@ -123,6 +119,10 @@ $form.on('submit', function (e) {
   });
 
   $(serialized).each(function (index, el) {
+    if (el.name !== 'ecardName') {
+      el.value = he.encode(el.value);
+    }
+
     if (el.name === 'titlePrice') {
       price.push(el);
       return true;
@@ -178,9 +178,12 @@ $form.on('submit', function (e) {
     data: objTest,
     datatype: 'json', // expecting JSON to be returned
     success: function (result) {
+      console.log(result);
+      $folder.text(objTest.ecardName);
       $success.modal('show');
     },
     error: function (result) {
+      console.log(result);
       $error.modal('show');
     }
   });

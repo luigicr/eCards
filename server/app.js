@@ -2,7 +2,6 @@ const express = require('express');
 const open = require('open');
 const path = require('path');
 const ecardsGenerator = require('./ecards-generator');
-const entities = require('special-entities');
 const bodyParser = require('body-parser');
 const port = 3000;
 const app = express();
@@ -37,6 +36,7 @@ app.get('/', function (req, res, next) {
 app.post('/generate', function(req, res) {
   console.log(req.body);
   ecardsGenerator.unDestinoUnaTarifa(req.body);
+
   res.status(200).json({success: "Updated Successfully", status : 200});
   // res.send({result:"success"});
   // res.status(200).jsonp({ success: 'success' });
