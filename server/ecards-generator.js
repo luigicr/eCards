@@ -17,11 +17,17 @@ module.exports = {
       templateDir,
       template;
 
-    dir = 'C:/eCards/' + data.ecardName + '/';
+    dir = 'C:/eCards/';
 
     // Create folder if doesn't exists
-    if (!fs.exists(dir)) {
-      fs.mkdir(dir);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir);
+    }
+
+    dir += data.ecardName + '/';
+    // Create folder if doesn't exists
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir);
     }
 
     // Render base 64 image and write to folder
