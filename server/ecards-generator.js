@@ -98,7 +98,9 @@ module.exports = {
 
     // append a file from stream
     archive.append(fs.createReadStream(dir + 'eCard.html'), { name: 'eCard.html' });
-    archive.append(fs.createReadStream(dir + data.img), { name: data.img });
+    if (data.img) {
+      archive.append(fs.createReadStream(dir + data.img), { name: data.img });
+    }
 
     // finalize the archive (ie we are done appending files but streams have to finish yet)
     archive.finalize();

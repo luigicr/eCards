@@ -85,7 +85,7 @@
 
       // Go through elements and group according type (array, complex array)
       $(serialized).each(function (index, el) {
-        if (el.name !== 'ecardName') {
+        if (el.name !== 'ecardName' || el.name === 'utm') {
           el.value = he.encode(el.value);
         }
 
