@@ -89,6 +89,9 @@ module.exports = {
       case 'even-one-more':
         templateDir += '3-destinos-impares-una-o-más-tarifas.html'
         break;
+      case 'odd-one-more':
+        templateDir += '4-destinos-pares-una-o-más-tarifas.html'
+        break;
       default:
         // return error
     }

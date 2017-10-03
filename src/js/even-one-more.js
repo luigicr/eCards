@@ -182,7 +182,6 @@ $imageEvenOneMore.change(function () {
   eCard.imgTo64(this);
 });
 
-
 $formEvenOneMore.on('submit', function (e) {
   'use strict';
   var checkboxs = $(this).find('input[type=checkbox]'),

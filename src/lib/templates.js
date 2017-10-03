@@ -1,3 +1,28 @@
+exports['cities-subtext']=function(obj){
+var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
+with(obj||{}){
+__p+='<div class="row city-'+
+((__t=( value ))==null?'':__t)+
+'" data-item="'+
+((__t=( value ))==null?'':__t)+
+'"> <div class="col-xs-5 form-group"> <label for="city-name-odd-one-more-'+
+((__t=( value ))==null?'':__t)+
+'">Cuidad</label> <input type="text" class="form-control" id="city-name-odd-one-more-'+
+((__t=( value ))==null?'':__t)+
+'" name="cities"> </div> <div class="col-xs-3 form-group"> <label for="sub-city-name-odd-one-more-'+
+((__t=( value ))==null?'':__t)+
+'">Sub texto</label> <input type="text" class="form-control" id="sub-city-name-odd-one-more-'+
+((__t=( value ))==null?'':__t)+
+'" name="subCities"> </div> <div class="checkbox col-xs-2"> <label><input type="checkbox" name="cities">Nacional</label> </div> <div class="col-xs-1 form-group"> <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city add-item"> <span class="glyphicon glyphicon-plus"></span> </button> </div> <div class="col-xs-1 form-group"> <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-danger pull-right remove-city remove-item"> <span class="glyphicon glyphicon-minus"></span> </button> </div> <div class="col-xs-12 cities-prices-odd-'+
+((__t=( value ))==null?'':__t)+
+'"> <div class="row" data-item="0"> <div class="col-xs-3 form-group"> <label for="currency-name-odd-one-more">Moneda</label> <input type="text" class="form-control" id="currency-name-odd-one-more" name="'+
+((__t=( typeof(name)!== 'undefined' ?  name : 'citiesPrice' ))==null?'':__t)+
+'"> </div> <div class="col-xs-3 form-group"> <label for="price-name-odd-one-more">Precio</label> <input type="text" class="form-control" id="price-name-odd-one-more" name="'+
+((__t=( typeof(name)!== 'undefined' ?  name : 'citiesPrice' ))==null?'':__t)+
+'"> </div> <div class="col-xs-2 form-group"> <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city-price"> <span class="glyphicon glyphicon-plus"></span> </button> </div> </div> </div> </div> ';
+}
+return __p;
+};
 exports['cities']=function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){

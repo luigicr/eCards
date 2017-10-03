@@ -100,6 +100,7 @@
         paragBottom = [],
         paragsBottom = [],
         paragCities = [],
+        paragSubCities = [],
         paragsCities = [],
         strong,
         strongTop,
@@ -131,7 +132,7 @@
       });
 
       serialized = $(dataForm).filter(function (index, item) {
-        return item.value !== '';
+        return item.value !== '' || item.name === 'subCities';
       });
 
       // Go through elements and group according type (array, complex array)
@@ -209,6 +210,13 @@
           return true;
         }
 
+        if (el.name === 'subCities') {
+          if (el.value !== 'on') {
+            paragSubCities.push(el);
+          }
+          return true;
+        }
+
         if (el.name === 'titleBanner' ||
           el.name === 'subtitleBanner' ||
           el.name === 'termAndCond' ||
@@ -226,6 +234,8 @@
         return true;
       });
 
+      console.log('paragSubCities');
+      console.log(paragSubCities);
       // Creates price object in correct format
       price = _.groupBy(price, function (val, index) {
         return Math.floor(index / 2);
@@ -321,7 +331,8 @@
 
       // Creates paragrhaps object in correct format
       _.each(paragCities, function (el, index) {
-        paragsCities.push({ text: el.value, national: strongCities[index].value });
+        paragsCities.push({ text: el.value,
+          national: strongCities[index].value });
       });
 
 
@@ -341,11 +352,22 @@
 
       _.each(objTest.cities, function (el, index) {
         el.prices = priceCities[index];
+        if (paragSubCities[index]) {
+          if (paragSubCities[index].value !== '') {
+            el.subtext = paragSubCities[index].value;
+          }
+        }
       });
 
       objTest.template = form.data('template');
 
       console.log(objTest);
+
+      if (objTest.template === 'odd-one-more') {
+        objTest.cities = _.groupBy(objTest.cities, function (val, index) {
+          return Math.floor(index / 2);
+        });
+      }
 
       return objTest;
     },

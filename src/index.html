@@ -25,7 +25,7 @@
             <li><a href="#one-destiny-fare" data-toggle="tab">un destino, una tarifa</a></li>
             <li><a href="#economic-or-executive" data-toggle="tab">clase económica o ejecutiva</a></li>
             <li><a href="#even-one-more" data-toggle="tab">destinos impares, una o más tarifas</a></li>
-            <li><a href="#" data-toggle="tab">destinos pares, una o más tarifas</a></li>
+            <li><a href="#odd-one-more" data-toggle="tab">destinos pares, una o más tarifas</a></li>
             <li><a href="#" data-toggle="tab">clase económica o ejecutiva, destinos impares</a></li>
             <li><a href="#" data-toggle="tab">clase económica o ejecutiva, destinos pares</a></li>
           </ul>
@@ -602,6 +602,242 @@
           <fieldset>
             <legend>Términos y Condiciones</legend>
             <div class="terms-even-one-more">
+              <div class="row" data-item="0">
+              <div class="form-group col-xs-10">
+                <label for="tpl-terms">Términos y condiciones</label>
+                <input type="text" name="termAndCond" class="form-control" id="tpl-terms" placeholder="Términos y condiciones">
+              </div>
+              <div class="col-xs-2 form-group">
+                <button type="button" title="Agregar otro término o condición" class="btn btn-default btn-success pull-right add-terms add-item">
+                  <span class="glyphicon glyphicon-plus"></span>
+                </button>
+              </div>
+              </div>
+            </div>
+
+            <script id="hidden-fligth-itinerary" type="text/x-custom-template"/>
+            </script>
+          </fieldset>
+          <!-- FOOTER -->
+          <button type="submit" class="btn btn-default btn-one-fare">Submit</button>
+        </form>
+      </div>
+
+      <!-- ODD, ONE OR MORE FARE -->
+      <div role="tabpanel" class="tab-pane col-xs-12" id="odd-one-more">
+        <form class="form-odd-one-more" data-template="odd-one-more">
+          <!-- UTM Language -->
+          <fieldset>
+            <legend>UTM</legend>
+            <div class="row">
+              <div class="form-group col-xs-4">
+                <label for="tpl-ecard-name">Folder Name</label>
+                <input type="text" name="ecardName" class="form-control" id="tpl-ecard-name" placeholder="Folder Name">
+              </div>
+              <div class="form-group col-xs-4">
+                <label for="tpl-url">UTM</label>
+                <input type="text" name="utm" class="form-control" id="tpl-url" placeholder="UTM">
+              </div>
+              <div class="form-group col-xs-4">
+                <label for="tpl-language">Idioma:</label>
+                <select id="tpl-language" name="language" class="form-control">
+                  <option value="es">Español</option>
+                  <option value="en">Inglés</option>
+                  <option value="pt">Portugues</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- HEADER -->
+          <fieldset>
+            <legend>Header section</legend>
+            <div class="row">
+              <div class="col-xs-6 form-group">
+                <label for="tpl-header">Header text</label>
+                <input type="text" name="titleTop" class="form-control" id="tpl-header" placeholder="Header text">
+              </div>
+              <div class="col-xs-6"><a href="#" id="">Puedes abrir este mensaje en tu...</a></div>
+              <div class="col-xs-12">
+                  Avianca LOGO | STAR ALLIANCE
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- JUMBOTRON -->
+          <fieldset>
+            <legend>Banner (Área Roja)</legend>
+            <div class="row">
+
+              <div class="col-xs-6">
+                <div class="headline-odd-one-more">
+                  <div class="row" data-item="0">
+                    <div class="form-group col-xs-10">
+                      <label for="tpl-headline">Headline</label>
+                      <input type="text" name="titleBanner" class="form-control" id="tpl-headline" placeholder="Headline">
+                    </div>
+                    <div class="col-xs-2 form-group">
+                      <button type="button" title="Agregar otro headline" class="btn btn-default pull-right add-headline add-item btn-success">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sub-headline-odd-one-more">
+                  <div class="row" data-item="0">
+                    <div class="form-group col-xs-10">
+                      <label for="tpl-sub-headline">Sub Headline</label>
+                      <input type="text" name="subtitleBanner" class="form-control" id="tpl-sub-headline" placeholder="Sub Headline">
+                    </div>
+
+                    <div class="col-xs-2 form-group">
+                      <button type="button" title="Agregar otro sub headline" class="btn btn-default btn-success pull-right add-sub-headline add-item">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="price-odd-one-more">
+                  <div class="row" data-item="0">
+                    <div class="form-group col-xs-5">
+                      <label for="tpl-headline-currency">Moneda</label>
+                      <input type="text" name="titlePrice" class="form-control" id="tpl-headline-currency" placeholder="Moneda">
+                    </div>
+                    <div class="form-group col-xs-5">
+                      <label for="tpl-headline-price">Precio</label>
+                      <input type="text" name="titlePrice" class="form-control" id="tpl-headline-price" placeholder="Precio">
+                    </div>
+                    <div class="col-xs-2 form-group">
+                      <button type="button" title="Agregar otro precio" class="btn btn-default btn-success pull-right add-headline-price add-item">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6">
+
+                <div class="form-group">
+                  <label for="tpl-headline-image">Imagen</label>
+                  <input type="file" name="tpl-headline-image" class="form-control image-odd-one-more" id="tpl-headline-image" placeholder="Imagen" accept="image/x-png,image/gif,image/jpeg">
+                </div>
+                <img id="img" class="img-preview hidden" src="#" alt="your image" />
+
+              </div>
+
+            </div>
+          </fieldset>
+
+          <!-- CONTENT -->
+          <fieldset>
+            <legend>Área Informátiva</legend>
+            <div class="info-headline-odd-one-more">
+              <div class="row" data-item="0">
+                <div class="form-group col-xs-10">
+                  <label for="tpl-content">Título promoción</label>
+                  <input type="text" name="titlePromo" class="form-control" id="tpl-content" placeholder="Infomación">
+                </div>
+                <div class="col-xs-2 form-group">
+                  <button type="button" title="Agregar otra información" class="btn btn-default btn-success pull-right add-info add-item">
+                    <span class="glyphicon glyphicon-plus"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="info-top-odd-one-more">
+              <div class="row" data-item="0">
+                <div class="form-group col-xs-8">
+                  <label for="tpl-content">Infomación</label>
+                  <input type="text" name="paragraphsTop" class="form-control" id="tpl-content" placeholder="Infomación">
+                </div>
+                <div class="checkbox col-xs-2">
+                  <label><input type="checkbox" name="paragraphsTop">Strong</label>
+                </div>
+                <div class="col-xs-2 form-group">
+                  <button type="button" title="Agregar otra información" class="btn btn-default btn-success pull-right add-info add-item">
+                    <span class="glyphicon glyphicon-plus"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- CITIES -->
+          <fieldset>
+            <legend>Cuidades</legend>
+            <div class="cities-odd-one-more">
+              <div class="row" data-item="0">
+                <div class="col-xs-5 form-group">
+                  <label for="city-name-odd-one-more">Cuidad</label>
+                  <input type="text" class="form-control" id="city-name-odd-one-more" name="cities">
+                </div>
+                <div class="col-xs-3 form-group">
+                  <label for="sub-city-name-odd-one-more">Sub texto</label>
+                  <input type="text" class="form-control" id="sub-city-name-odd-one-more" name="subCities">
+                </div>
+                <div class="checkbox col-xs-2">
+                  <label><input type="checkbox" name="cities">Nacional</label>
+                </div>
+                <div class="col-xs-2 form-group">
+                  <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city add-item">
+                    <span class="glyphicon glyphicon-plus"></span>
+                  </button>
+                </div>
+
+                <div class="col-xs-12 cities-prices-odd">
+                  <div class="row" data-item="0">
+                    <div class="col-xs-3 form-group">
+                      <label for="currency-name-odd-one-more">Moneda</label>
+                      <input type="text" class="form-control" id="currency-name-odd-one-more" name="citiesPrice">
+                    </div>
+                    <div class="col-xs-3 form-group">
+                      <label for="price-name-odd-one-more">Precio</label>
+                      <input type="text" class="form-control" id="price-name-odd-one-more" name="citiesPrice">
+                    </div>
+                    <div class="col-xs-2 form-group">
+                      <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city-price">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- CONTENT END -->
+          <fieldset>
+            <legend>Leyenda final</legend>
+            <div class="info-bottom-odd-one-more">
+              <div class="row" data-item="0">
+                <div class="form-group col-xs-8">
+                  <label for="tpl-content">Infomación</label>
+                  <input type="text" name="paragraphsBottom" class="form-control" id="tpl-content" placeholder="Infomación">
+                </div>
+                <div class="checkbox col-xs-2">
+                  <label><input type="checkbox" name="paragraphsBottom">Strong</label>
+                </div>
+                <div class="col-xs-2 form-group">
+                  <button type="button" title="Agregar otra información" class="btn btn-default btn-success pull-right add-info add-item">
+                    <span class="glyphicon glyphicon-plus"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <!-- SOCIAL -->
+          <!-- <fieldset>
+            <legend>Área de redes sociales</legend>
+            <p><a href="avianca.com">Avianca.com</a> FB TW INSTA YT <a href="lifemiles.com">LifeMiles</a></p>
+            <p>Para recibir nuestros mensajes, guarda...</p>
+          </fieldset> -->
+
+          <!-- TERMS & CODITIONS -->
+          <fieldset>
+            <legend>Términos y Condiciones</legend>
+            <div class="terms-odd-one-more">
               <div class="row" data-item="0">
               <div class="form-group col-xs-10">
                 <label for="tpl-terms">Términos y condiciones</label>
