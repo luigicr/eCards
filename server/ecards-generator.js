@@ -13,7 +13,7 @@ Handlebars.registerHelper('two_prices', function(obj, options) {
 });
 
 Handlebars.registerHelper('exist_top_text', function(title, text, options) {
-    if((title != "" && title != null  && typeof title != "undefined") || 
+    if((title != "" && title != null  && typeof title != "undefined") ||
     (text != "" && text != null  && typeof text != "undefined")) {
         return options.fn(this);
     } else {
@@ -28,6 +28,17 @@ Handlebars.registerHelper('exist_var', function(value, options) {
       return options.inverse(this);
     }
 });
+
+function generateEcard(data, source){
+  var template = Handlebars.compile(source);
+  var result = template(data);
+
+  fs.writeFile("eCard.html", result, function(err) {
+      if(err) {
+          return console.log(err);
+      }
+  });
+}
 
 module.exports = {
   compile: function (data) {
@@ -71,6 +82,12 @@ module.exports = {
     switch (data.template) {
       case 'one-destiny-fare':
         templateDir += '1-un-destino-una-tarifa.html';
+        break;
+      case 'economic-or-executive':
+        templateDir += '2-clase-económica-ejecutiva.html'
+        break;
+      case 'even-one-more':
+        templateDir += '3-destinos-impares-una-o-más-tarifas.html'
         break;
       default:
         // return error
@@ -129,5 +146,21 @@ module.exports = {
 
     // finalize the archive (ie we are done appending files but streams have to finish yet)
     archive.finalize();
+  },
+
+  evenDestinations: function(data, lang){
+    var source;
+    switch(lang){
+      case 'en':
+        source = fs.readFileSync('./tmp-ecards/en/4-destinos-pares-una-o-más-tarifasEng.html', 'utf-8');
+        break;
+      case 'pt':
+        source = fs.readFileSync('./tmp-ecards/pt/4-destinos-pares-una-o-más-tarifasPor.html', 'utf-8');
+        break;
+      default:
+        source = fs.readFileSync('./tmp-ecards/es/4-destinos-pares-una-o-más-tarifas.html', 'utf-8');
+        break;
+    }
+    generateEcard(data, source);
   }
 }

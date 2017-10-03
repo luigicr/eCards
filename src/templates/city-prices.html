@@ -1,0 +1,20 @@
+<div class="row" data-item="<%= value %>">
+  <div class="col-xs-3 form-group">
+    <label for="currency-name-even-one-more-<%= value %>">Moneda</label>
+    <input type="text" class="form-control" id="currency-name-even-one-more-<%= value %>" name="<%= typeof(name)!== 'undefined' ?  name : 'citiesPrice' %>">
+  </div>
+  <div class="col-xs-3 form-group">
+    <label for="price-name-even-one-more-<%= value %>">Precio</label>
+    <input type="text" class="form-control" id="price-name-even-one-more-<%= value %>" name="<%= typeof(name)!== 'undefined' ?  name : 'citiesPrice' %>">
+  </div>
+  <div class="col-xs-1 form-group">
+    <button type="button" title="Agregar otro precio" class="btn btn-default btn-success pull-right add-city-price">
+      <span class="glyphicon glyphicon-plus"></span>
+    </button>
+  </div>
+  <div class="col-xs-1 form-group">
+    <button type="button" title="Reover precio" class="btn btn-default btn-danger pull-right remove-city-price">
+      <span class="glyphicon glyphicon-minus"></span>
+    </button>
+  </div>
+</div>

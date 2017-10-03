@@ -9,10 +9,27 @@
 }
 
 .add-item,
-.remove-item {
+.remove-item,
+.add-city-price,
+.remove-city-price {
     margin-top: 25px;
 }
 
 .checkbox {
   margin-top: 30px;
+}
+
+.cities-even-one-more {
+  padding-left: 15px;
+  padding-right: 15px;
+
+  > .row {
+    border: 1px solid #ccc;
+    border-top: 0 none;
+    padding: 30px;
+
+    &:first-child {
+      border-top: 1px solid #ccc;
+    }
+  }
 }

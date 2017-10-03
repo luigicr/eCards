@@ -4,7 +4,7 @@ var templates = require('../../src/lib/templates.js');
 
 var templateHeadline = templates.headline, // eslint-disable-line one-var
   templateSubHeadline = templates['sub-headline'],
-  templateHeadlinePrice = templates['headline-price'],
+  templateHeadlinePrice = templates.price,
   templateInfo = templates.info,
   templateTerms = templates.terms,
   $headlineContent = $('.headline-content'),

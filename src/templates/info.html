@@ -1,10 +1,10 @@
 <div class="row" data-item="<%= value %>">
   <div class="form-group col-xs-8">
     <label for="tpl-content<%= value %>">Información</label>
-    <input type="text" name="paragraphs" class="form-control" id="tpl-content<%= value %>" placeholder="Información">
+    <input type="text" name="<%= typeof(name)!== 'undefined' ?  name : 'paragraphs' %>" class="form-control" id="tpl-content<%= value %>" placeholder="Información">
   </div>
   <div class="checkbox col-xs-2">
-    <label><input type="checkbox" name="paragraphs">Strong</label>
+    <label><input type="checkbox" name="<%= typeof(name)!== 'undefined' ?  name : 'paragraphs' %>">Strong</label>
   </div>
   <div class="col-xs-1 form-group">
     <button type="button" title="Agregar otra información" class="btn btn-default btn-success pull-right add-info add-item">
