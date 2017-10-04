@@ -367,7 +367,7 @@ line-height: 33px;
                                         <table class="contents" style="table-layout:fixed;border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;width:100%;font-size:14px;text-align:center;" >
 											<tr style="vertical-align:top;" >
                                             	
-												<td class="txtPreheader" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:11px;color:#969696;" >Cura&ccedil;ao pefeito a partir de USD 549</td>
+												<td class="txtPreheader" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:11px;color:#969696;" >{{{titleTop}}}</td>
                                             </tr>
                                         </table>
                                     </td>
@@ -383,7 +383,7 @@ line-height: 33px;
                                     <td class="innerPreHeader" style="padding-bottom:0;padding-right:0;padding-left:0;padding-top:10px;" >
                                         <table class="contents" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;width:100%;font-size:14px;text-align:center;" >
 											<tr style="vertical-align:top;" >
-                                            	<td class="navegador" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><a href="http://images-aviancataca.com/mail/templates/responsive/variastarifasHorizontalSegmentado.html" target="_blank" style="color:#ED1C24;font-size:11px;text-decoration:underline;" >Pode abrir esta mensagem em seu navegador</a></td>
+                                            	<td class="navegador" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><a href="{{{utm}}}" target="_blank" style="color:#ED1C24;font-size:11px;text-decoration:underline;" >Pode abrir esta mensagem em seu navegador</a></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -409,7 +409,6 @@ line-height: 33px;
 		</td>
 		</tr>
 		<!-- fin preaher -->
-		
 		<tr>
 		<td>
         <div class="webkit" style="max-width:690px;margin-top:0;margin-bottom:0;margin-right:auto;margin-left:auto;" >
@@ -438,7 +437,7 @@ line-height: 33px;
 												<td class="cabecera" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
 													<table class="contents" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;width:100%;font-size:14px;text-align:center;" >
 														<tr style="vertical-align:top;" >
-															<td class="logo" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><a href="http://www.avianca.com/" target="_blank" style="color:#ED1C24;text-decoration:underline;" ><img src="http://images-aviancataca.com/mail/images/ecomm/far/avianca/avmail-avlogo-sa20.png" border="0" width="300" alt="Avianca.com" style="border-width:0;width:100%;max-width:300px;height:auto;" ></a></td>
+															<td class="logo" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><a href="{{{utm}}}" target="_blank" style="color:#ED1C24;text-decoration:underline;" ><img src="http://images-aviancataca.com/mail/images/ecomm/far/avianca/avmail-avlogo-sa20.png" border="0" width="300" alt="Avianca.com" style="border-width:0;width:100%;max-width:300px;height:auto;" ></a></td>
 														</tr>
 													</table>
 												</td>
@@ -468,60 +467,101 @@ line-height: 33px;
 				</tr>
 				<tr><td width="100%" bgcolor="#ffffff" height="20" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="20" style="border-width:0;" ></td></tr>
 				<!-- texto / banner -->
-				<tr style="vertical-align:top">
+				<tr>
 					<td width="100%" valign="top" class="two-column" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;text-align:center;font-size:0; background-color: #ea2127;">
 						<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
 							<tr style="vertical-align:top;" >
 								<td width="50%" valign="top" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0; background-color: #ea2127; font-size:22px;vertical-align:middle;">
 									<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff;">
 														
-										<tr><td class="h1" style="font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff; text-align:center;"><span class="txtWhite" style="font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff;">Cura&ccedil;ao pefeito</span></td></tr>
-										<tr><td style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff; font-size:12px;text-align:center; Padding-top:10px;">a partir de</td></tr>
-										<tr><td class="h1" style="font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff; text-align:center; Padding-top:5px; Padding-bottom:0px;"><span style="font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff; font-size:22px;">USD</span> 206</td></tr>
+										<tr><td class="h1" style="font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff; text-align:center;"><span class="txtWhite" style="font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff;">
+											{{#each titleBanner}}
+												{{#if @last}}
+													{{{this}}}
+												{{else}}
+													{{{this}}}<br/>
+												{{/if}}
+											{{/each}}
+										</span></td></tr>
+										{{#exist_var subtitleBanner}}
+											<tr><td style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff; font-size:12px;text-align:center; Padding-top:10px;">
+												{{#each subtitleBanner}}
+													{{#if @last}}
+														{{{this}}}
+													{{else}}
+														{{{this}}}<br/>
+													{{/if}}
+												{{/each}}
+											</td></tr>
+										{{/exist_var}}
+										{{#each titlePrice}}
+											<tr><td class="h1" style="font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff; text-align:center; Padding-top:5px; Padding-bottom:0px;"><span style="font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff; font-size:22px;">{{{this.currency}}}</span> {{{this.price}}}</td></tr>
+										{{/each}}
 										
 									</table>
 								</td>
 								<td width="50%" valign="top" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
-									<img src="http://images-aviancataca.com/mail/images/ecomm/far/avianca/avmail-bnr-T2-demo.jpg" alt="" style="border-width:0;width:100%;max-width:345px;height:auto;text-align:center; display: block;" />
+									<img src="{{{img}}}" alt="" style="border-width:0;width:100%;max-width:345px;height:auto;text-align:center;display:block;" />
 								</td>
 							</tr>
 						</table>
 					</td>
 				</tr>
-				<!-- fin texto / banner -->
+
 				<tr>
 					<td align="center" class="one-column" width="100%" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0; text-align:center;" >
-						<img src="http://images-aviancataca.com/mail/images/ecomm/far/avianca/banner-cobrand.jpg" style="width: 100%; max-width: 690px; height: auto;" alt="" />
+						<img src="{{{imgcobrand}}}" style="max-width: 100%; height: auto;" alt="" />
 					</td>
 				</tr>
-				
-				
-				<tr>
-					<td>
-						<table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
-							<tr>
-								<td valign="top" width="3%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="100%" height="1" alt="" border="0" style="border-width:0;" /></td>
-								<td class="one-column" width="94%" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
-									<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
-										
-										<tr>
-											<td class="inner contents" style="padding-top:5px;padding-bottom:5px;padding-right:5px;padding-left:5px;width:100%;text-align:left;" >
-												<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
-												<tr><td width="100%" bgcolor="#ffffff" height="10" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="10" style="border-width:0;" ></td></tr>
-												<tr><td class="h11" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:24px;color:#ea2225;text-align:center;" >Cura&ccedil;ao pefeito</td></tr>
-												<tr><td width="100%" bgcolor="#ffffff" height="20" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="20" style="border-width:0;" ></td></tr>
-												<tr><td class="texto" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:14px;Margin-bottom:10px;text-align:center;">Via Bogot&aacute; &ndash; Round&ndash;Trip &ndash; Taxes and charges included.</td></tr>
-												</table>
-											</td>
-										</tr>
-									</table>
-								</td>
-								<td valign="top" width="3%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="100%" height="1" alt="" border="0" style="border-width:0;" /></td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-				<tr><td width="100%" bgcolor="#ffffff" height="20" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="20" style="border-width:0;display:block;" ></td></tr>
+				{{#exist_top_text this.titlePromo this.paragraphsTop}}
+					<!-- fin texto / banner -->
+					<tr>
+						<td>
+							<table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td valign="top" width="3%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="100%" height="1" alt="" border="0" style="border-width:0;" /></td>
+									<td class="one-column" width="94%" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+										<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
+											
+											<tr>
+												<td class="inner contents" style="padding-top:5px;padding-bottom:5px;padding-right:5px;padding-left:5px;width:100%;text-align:left;" >
+													<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
+													<tr><td width="100%" bgcolor="#ffffff" height="10" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="10" style="border-width:0;" ></td></tr>
+													{{#exist_var titlePromo}}
+														<tr><td class="h11" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:24px;color:#ea2225;text-align:center;" >
+															{{#each titlePromo}}
+																{{#if @last}}
+																	{{{this}}}
+																{{else}}
+																	{{{this}}}<br/>
+																{{/if}}
+															{{/each}}
+														</td></tr>
+													{{/exist_var}}
+													{{#exist_var paragraphsTop}}
+														<tr><td width="100%" bgcolor="#ffffff" height="20" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="20" style="border-width:0;" ></td></tr>
+														{{#each paragraphsTop}}
+															{{#if this.bold}}
+																<tr><td class="texto" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:14px;Margin-bottom:10px;text-align:center;"><strong>{{{this.text}}}</strong></td></tr>
+															{{else}}
+																<tr><td class="texto" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:14px;Margin-bottom:10px;text-align:center;">{{{this.text}}}</td></tr>
+															{{/if}}
+														{{/each}}
+													{{/exist_var}}
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+									<td valign="top" width="3%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="100%" height="1" alt="" border="0" style="border-width:0;" /></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				{{/exist_top_text}}
+
+				<tr><td width="100%" bgcolor="#ffffff" height="20" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="20" style="border-width:0;" ></td></tr>
+				<!-- Inicia el cuerpo -->
 				
 				<!-- titular -->
 				<tr>
@@ -529,7 +569,7 @@ line-height: 33px;
 						<table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
 							<tr>
 								<td valign="top" width="3%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="100%" height="1" alt="" border="0" style="border-width:0;" /></td>
-								<td class="one-column" width="94%" style="padding-top:0;padding-bottom:0;padding-right:0px;padding-left:0px;vertical-align:middle;" >
+								<td class="one-column" width="94%" style="padding-top:0;padding-bottom:0;padding-right:5px;padding-left:5px;vertical-align:middle;" >
 									<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff;" >
 										
 										<tr>
@@ -551,112 +591,104 @@ line-height: 33px;
 					</td>
 				</tr>
 				<!-- fin titular -->
-				<tr><td width="100%" bgcolor="#ffffff" height="20" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="20" style="border-width:0;" ></td></tr>
+
+				<tr><td width="100%" bgcolor="#ffffff" height="10" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="10" style="border-width:0;" ></td></tr>
 				
-				<!-- bloque tarifa nacional -->
-				<tr><td><table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
-				<tr>
-					<td valign="top" width="3%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="1" alt="" border="0" style="border-width:0;" /></td>
-					<td class="one-column" width="94%" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
-						<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
-							<tr>
-								<td>
-									<table width="100%" align="center" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0;font-family:Arial, Helvetica, sans-serif;color:#333333;" >
-										<tr style="vertical-align:top;" ><td class="h3 titulo" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:18px;font-weight:normal;Padding-bottom:5px;text-align:center;vertical-align:middle;" >San Pedro Sula o Tegucigalpa. A paritr de</td></tr>
-										<tr style="vertical-align:top;" ><td class="h2" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-weight:normal;Padding-bottom:0px;text-align:center;" ><span class="h4" style="font-weight:normal;Padding-bottom:15px;text-align:center;padding-top:13px;" >USD </span>206</td></tr>
-									</table>
-								</td>
-							</tr>
-							<tr style="vertical-align:top;">
-								<td valign="top" height="10" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="10" alt="" border="0" style="border-width:0;display:block;" /></td>
-							</tr>
-							<tr style="vertical-align:top;">
-								<td valign="top" height="2" bgcolor="#008584" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="2" alt="" border="0" style="border-width:0;display:block;" /></td>
-							</tr>
-						</table>
-					</td>
-					<td valign="top" width="3%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="1" alt="" border="0" style="border-width:0;" /></td>
-				</tr>
-				</table></td></tr>
-				<!-- fin bloque tarifa nacional -->
-				<tr><td width="100%" bgcolor="#ffffff" height="20" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="20" style="border-width:0;" ></td></tr>
-				<!-- bloque tarifa internacional -->
-				<tr><td><table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
-				<tr>
-					<td valign="top" width="3%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="1" alt="" border="0" style="border-width:0;" /></td>
-					<td class="one-column" width="94%" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
-						<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
-							<tr>
-								<td>
-									<table width="100%" align="center" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0;font-family:Arial, Helvetica, sans-serif;color:#333333;" >
-										<tr style="vertical-align:top;" ><td class="h3 titulo" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:18px;font-weight:normal;Padding-bottom:5px;text-align:center;vertical-align:middle;" >Ciudad de Panam&aacute;. A paritr de</td></tr>
-										<tr style="vertical-align:top;" ><td class="h2" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-weight:normal;Padding-bottom:0px;text-align:center;" ><span class="h4" style="font-weight:normal;Padding-bottom:15px;text-align:center;padding-top:13px;" >USD </span>206</td></tr>
-									</table>
-								</td>
-							</tr>
-							<tr style="vertical-align:top;">
-								<td valign="top" height="10" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="10" alt="" border="0" style="border-width:0;display:block;" /></td>
-							</tr>
-							<tr style="vertical-align:top;">
-								<td valign="top" height="2" bgcolor="#e85600" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="2" alt="" border="0" style="border-width:0;display:block;" /></td>
-							</tr>
-						</table>
-					</td>
-					<td valign="top" width="3%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="1" alt="" border="0" style="border-width:0;" /></td>
-				</tr>
-				</table></td></tr>
-				<!-- fin bloque tarifa internacional -->
-				<tr><td width="100%" bgcolor="#ffffff" height="20" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="20" style="border-width:0;" ></td></tr>
-				<!-- bloque con 2 tarifas -->
-				<tr><td><table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
-				<tr>
-					<td valign="top" width="3%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="1" alt="" border="0" style="border-width:0;" /></td>
-					<td class="one-column" width="94%" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
-						<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
-							<tr>
-								<td>
-									<table width="100%" align="center" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0;font-family:Arial, Helvetica, sans-serif;color:#333333;" >
-										<tr style="vertical-align:top;" ><td class="h3 titulo" colspan="3" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:18px;font-weight:normal;Padding-bottom:5px;text-align:center;vertical-align:middle;" >Santiago de Chile. A paritr de</td></tr>
+				{{#each economyClass}}
+					<tr><td>
+					<table cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td valign="top" width="2%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="100%" height="1" alt="" border="0" style="border-width:0;" /></td>
+						<td width="96%" valign="top" class="two-column cuerpo" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;text-align:center;font-size:0;" >
+							<!--[if (gte mso 9)|(IE)]>
+							<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
+							<tr style="vertical-align:top;" >
+							<![endif]-->
+							<!--[if (gte mso 9)|(IE)]>
+							<td width="50%" valign="top" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+							<![endif]-->
+							{{#each this}}
+								<div class="column" style="width:100%;max-width:328px;display:inline-block;vertical-align:top;" >
+									<!-- bloque tarifa nacional -->
+									<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
 										<tr style="vertical-align:top;" >
-											<td width="45%">
-												<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
-													<tr>
-														<td class="h2" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-weight:normal;Padding-bottom:0px;text-align:right;" ><span class="h4" style="font-size:16px;font-weight:normal;Padding-bottom:15px;text-align:center;padding-top:13px;" >USD </span>252</td>
+											<td class="inner" style="padding-top:10px;padding-bottom:10px;padding-right:10px;padding-left:10px;" >
+												<table class="contents" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;width:100%;font-size:14px;text-align:left;height:180px;" >
+													<tr style="vertical-align:top;" >
+														<td valign="top" colspan="3" height="1" bgcolor="#d9d9d9" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="1" alt="" border="0" style="border-width:0;display:block;" /></td>
 													</tr>
-												</table>
-											</td>
-											<td width="10%" bgcolor="#ffffff" height="20" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="20" style="border-width:0;" ></td>
-											<td width="45%">
-												<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
-													<tr>
-														<td class="h2" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-weight:normal;Padding-bottom:0px;text-align:left;" ><span class="h4" style="font-weight:normal;Padding-bottom:15px;text-align:center;padding-top:13px;" >CLP </span>173,174</td>
+													<tr style="vertical-align:top;" >
+														<!--[if (gte mso 9)|(IE)]>
+														<td valign="top" width="1" height="180" bgcolor="#d9d9d9" style="font-size:0px;line-height:180px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="180" alt="" border="0" style="border-width:0;" /></td>
+														<![endif]-->
+														<!--[if !mso 9]><!-->
+														<td valign="top" width="1" bgcolor="#d9d9d9" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="180" alt="" border="0" style="border-width:0;" /></td>
+														<!--<![endif]-->
+														
+														
+														<td align="center" valign="top" class="text" style="padding-bottom:0;padding-right:0;padding-left:0;padding-top:15px;text-align:center;" >
+															<table width="100%" align="center" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0;font-family: Arial, Helvetica, sans-serif;color:#333333;" >
+																<tr style="vertical-align:top;" ><td class="h3 titulo" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:18px;font-weight:normal;Padding-bottom:10px;text-align:center;height:45px;vertical-align:middle;line-height:25px;" >{{{this.text}}}</td></tr>
+																<tr style="vertical-align:top;" ><td class="h4" style="padding-bottom:0;padding-right:0;padding-left:0;font-size:14px;font-weight:normal;Padding-bottom:5px;text-align:center;padding-top:0px;" >{{{this.subtext}}}</td></tr>
+																{{#each this.prices}}
+																	{{#if @first}}
+																		<tr style="vertical-align:top;" ><td class="h2" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:32px;font-weight:normal;Padding-bottom:0px;text-align:center;" ><span class="h4" style="font-size:16px;font-weight:normal;Padding-bottom:15px;text-align:center;padding-top:13px;" >{{{this.currency}}} </span>{{{this.price}}}</td></tr>
+																		
+																	{{else}}
+																		<tr style="vertical-align:top;" ><td class="h2" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:28px;font-weight:normal;Padding-bottom:0px;text-align:center;" ><span class="h4" style="font-size:14px;font-weight:normal;Padding-bottom:15px;text-align:center;padding-top:13px;" >{{{this.currency}}} </span>{{{this.price}}}</td></tr>
+																	{{/if}}
+																{{/each}}
+																
+																
+															</table>
+														</td>
+														<!--[if (gte mso 9)|(IE)]>
+														<td valign="top" width="1" height="180" bgcolor="#d9d9d9" style="font-size:0px;line-height:180px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="180" alt="" border="0" style="border-width:0;" /></td>
+														<![endif]-->
+														<!--[if !mso 9]><!-->
+														<td valign="top" width="1" bgcolor="#d9d9d9" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="180" alt="" border="0" style="border-width:0;" /></td>
+														<!--<![endif]-->
+													</tr>
+													<tr style="vertical-align:top;">
+														{{#if this.national}}
+															<td valign="top" colspan="3" height="4" bgcolor="#008584" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="4" alt="" border="0" style="border-width:0;display:block;" /></td>
+														{{else}}
+															<td valign="top" colspan="3" height="4" bgcolor="#e85600" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="4" alt="" border="0" style="border-width:0;display:block;" /></td>
+														{{/if}}
+													</tr>
+													<tr style="vertical-align:top;" >
+														<td valign="top" colspan="3" height="1" bgcolor="#d9d9d9" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="1" alt="" border="0" style="border-width:0;display:block;" /></td>
 													</tr>
 												</table>
 											</td>
 										</tr>
 									</table>
+									<!-- fin bloque tarifa nacional -->
+								</div>
+								<!--[if (gte mso 9)|(IE)]>
 								</td>
-							</tr>
-							<tr style="vertical-align:top;">
-								<td valign="top" height="10" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="10" alt="" border="0" style="border-width:0;display:block;" /></td>
-							</tr>
-							<tr style="vertical-align:top;">
-								<td valign="top" height="2" bgcolor="#e85600" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="2" alt="" border="0" style="border-width:0;display:block;" /></td>
-							</tr>
-						</table>
-					</td>
-					<td valign="top" width="3%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="1" alt="" border="0" style="border-width:0;" /></td>
-				</tr>
-				</table></td></tr>
-				<!-- fin bloque con 2 tarifas -->
-				<tr><td width="100%" bgcolor="#ffffff" height="50" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="50" style="border-width:0;" ></td></tr>
+								<![endif]-->
+								<!--[if (gte mso 9)|(IE)]>
+								<td width="50%" valign="top" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+								<![endif]-->
+							{{/each}}
+						</td>
+						<td valign="top" width="2%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="100%" height="1" alt="" border="0" style="border-width:0;" /></td>
+					</tr>
+					</table>
+					</td></tr>
+				{{/each}}
+
+				<tr><td width="100%" bgcolor="#ffffff" height="10" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="10" style="border-width:0;" ></td></tr>
+				
+				<!-- Inicia el cuerpo -->
 				
 				<tr>
 					<td>
 						<table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
 							<tr>
 								<td valign="top" width="3%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="100%" height="1" alt="" border="0" style="border-width:0;" /></td>
-								<td class="one-column" width="94%" style="padding-top:0;padding-bottom:0;padding-right:0px;padding-left:0px;vertical-align:middle;" >
+								<td class="one-column" width="94%" style="padding-top:0;padding-bottom:0;padding-right:5px;padding-left:5px;vertical-align:middle;" >
 									<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff;" >
 										
 										<tr>
@@ -677,6 +709,94 @@ line-height: 33px;
 						</table>
 					</td>
 				</tr>
+
+				<tr><td width="100%" bgcolor="#ffffff" height="10" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="10" style="border-width:0;" ></td></tr>
+				
+				{{#each executiveClass}}
+					<tr><td>
+					<table cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td valign="top" width="2%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="100%" height="1" alt="" border="0" style="border-width:0;" /></td>
+						<td width="96%" valign="top" class="two-column cuerpo" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;text-align:center;font-size:0;" >
+							<!--[if (gte mso 9)|(IE)]>
+							<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
+							<tr style="vertical-align:top;" >
+							<![endif]-->
+							<!--[if (gte mso 9)|(IE)]>
+							<td width="50%" valign="top" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+							<![endif]-->
+							{{#each this}}
+								<div class="column" style="width:100%;max-width:328px;display:inline-block;vertical-align:top;" >
+									<!-- bloque tarifa nacional -->
+									<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
+										<tr style="vertical-align:top;" >
+											<td class="inner" style="padding-top:10px;padding-bottom:10px;padding-right:10px;padding-left:10px;" >
+												<table class="contents" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;width:100%;font-size:14px;text-align:left;height:180px;" >
+													<tr style="vertical-align:top;" >
+														<td valign="top" colspan="3" height="1" bgcolor="#d9d9d9" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="1" alt="" border="0" style="border-width:0;display:block;" /></td>
+													</tr>
+													<tr style="vertical-align:top;" >
+														<!--[if (gte mso 9)|(IE)]>
+														<td valign="top" width="1" height="180" bgcolor="#d9d9d9" style="font-size:0px;line-height:180px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="180" alt="" border="0" style="border-width:0;" /></td>
+														<![endif]-->
+														<!--[if !mso 9]><!-->
+														<td valign="top" width="1" bgcolor="#d9d9d9" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="180" alt="" border="0" style="border-width:0;" /></td>
+														<!--<![endif]-->
+														
+														
+														<td align="center" valign="top" class="text" style="padding-bottom:0;padding-right:0;padding-left:0;padding-top:15px;text-align:center;" >
+															<table width="100%" align="center" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0;font-family: Arial, Helvetica, sans-serif;color:#333333;" >
+																<tr style="vertical-align:top;" ><td class="h3 titulo" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:18px;font-weight:normal;Padding-bottom:10px;text-align:center;height:45px;vertical-align:middle;line-height:25px;" >{{{this.text}}}</td></tr>
+																<tr style="vertical-align:top;" ><td class="h4" style="padding-bottom:0;padding-right:0;padding-left:0;font-size:14px;font-weight:normal;Padding-bottom:5px;text-align:center;padding-top:0px;" >{{{this.subtext}}}</td></tr>
+																{{#each this.prices}}
+																	{{#if @first}}
+																		<tr style="vertical-align:top;" ><td class="h2" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:32px;font-weight:normal;Padding-bottom:0px;text-align:center;" ><span class="h4" style="font-size:16px;font-weight:normal;Padding-bottom:15px;text-align:center;padding-top:13px;" >{{{this.currency}}} </span>{{{this.price}}}</td></tr>
+																		
+																	{{else}}
+																		<tr style="vertical-align:top;" ><td class="h2" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:28px;font-weight:normal;Padding-bottom:0px;text-align:center;" ><span class="h4" style="font-size:14px;font-weight:normal;Padding-bottom:15px;text-align:center;padding-top:13px;" >{{{this.currency}}} </span>{{{this.price}}}</td></tr>
+																	{{/if}}
+																{{/each}}
+																
+																
+															</table>
+														</td>
+														<!--[if (gte mso 9)|(IE)]>
+														<td valign="top" width="1" height="180" bgcolor="#d9d9d9" style="font-size:0px;line-height:180px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="180" alt="" border="0" style="border-width:0;" /></td>
+														<![endif]-->
+														<!--[if !mso 9]><!-->
+														<td valign="top" width="1" bgcolor="#d9d9d9" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="180" alt="" border="0" style="border-width:0;" /></td>
+														<!--<![endif]-->
+													</tr>
+													<tr style="vertical-align:top;">
+														{{#if this.national}}
+															<td valign="top" colspan="3" height="4" bgcolor="#008584" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="4" alt="" border="0" style="border-width:0;display:block;" /></td>
+														{{else}}
+															<td valign="top" colspan="3" height="4" bgcolor="#e85600" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="4" alt="" border="0" style="border-width:0;display:block;" /></td>
+														{{/if}}
+													</tr>
+													<tr style="vertical-align:top;" >
+														<td valign="top" colspan="3" height="1" bgcolor="#d9d9d9" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="1" alt="" border="0" style="border-width:0;display:block;" /></td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+									<!-- fin bloque tarifa nacional -->
+								</div>
+								<!--[if (gte mso 9)|(IE)]>
+								</td>
+								<![endif]-->
+								<!--[if (gte mso 9)|(IE)]>
+								<td width="50%" valign="top" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+								<![endif]-->
+							{{/each}}
+						</td>
+						<td valign="top" width="2%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="100%" height="1" alt="" border="0" style="border-width:0;" /></td>
+					</tr>
+					</table>
+					</td></tr>
+				{{/each}}
+				
 				<tr><td width="100%" bgcolor="#ffffff" height="20" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="20" style="border-width:0;" ></td></tr>
 				
 				<tr><td><table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -684,77 +804,19 @@ line-height: 33px;
 					<td valign="top" width="3%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="1" alt="" border="0" style="border-width:0;" /></td>
 					<td class="one-column" width="94%" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
 						<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
-							<tr>
-								<td>
-									<table width="100%" align="center" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0;font-family:Arial, Helvetica, sans-serif;color:#333333;" >
-										<tr style="vertical-align:top;" ><td class="h3 titulo" colspan="3" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:18px;font-weight:normal;Padding-bottom:5px;text-align:center;vertical-align:middle;" >Sao Paulo o Rio de Janeiro. A paritr de</td></tr>
-										<tr style="vertical-align:top;" >
-											<td width="45%">
-												<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
-													<tr>
-														<td class="h2" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-weight:normal;Padding-bottom:0px;text-align:right;" ><span class="h4" style="font-size:16px;font-weight:normal;Padding-bottom:15px;text-align:center;padding-top:13px;" >USD </span>206</td>
-													</tr>
-												</table>
-											</td>
-											<td width="10%" bgcolor="#ffffff" height="20" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="20" style="border-width:0;" ></td>
-											<td width="45%">
-												<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
-													<tr>
-														<td class="h2" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-weight:normal;Padding-bottom:0px;text-align:left;" ><span class="h4" style="font-weight:normal;Padding-bottom:15px;text-align:center;padding-top:13px;" >CLP </span>173,124</td>
-													</tr>
-												</table>
-											</td>
-										</tr>
-									</table>
-								</td>
-							</tr>
-							<tr style="vertical-align:top;">
-								<td valign="top" height="10" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="10" alt="" border="0" style="border-width:0;display:block;" /></td>
-							</tr>
-							<tr style="vertical-align:top;">
-								<td valign="top" height="2" bgcolor="#e85600" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="2" alt="" border="0" style="border-width:0;display:block;" /></td>
-							</tr>
-						</table>
-					</td>
-					<td valign="top" width="3%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="1" alt="" border="0" style="border-width:0;" /></td>
-				</tr>
-				</table></td></tr>
-				<tr><td width="100%" bgcolor="#ffffff" height="20" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="20" style="border-width:0;" ></td></tr>
-				<tr><td><table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
-				<tr>
-					<td valign="top" width="3%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="1" alt="" border="0" style="border-width:0;" /></td>
-					<td class="one-column" width="94%" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
-						<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
-							<tr>
-								<td>
-									<table width="100%" align="center" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0;font-family:Arial, Helvetica, sans-serif;color:#333333;" >
-										<tr style="vertical-align:top;" ><td class="h3 titulo" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:18px;font-weight:normal;Padding-bottom:5px;text-align:center;vertical-align:middle;" >Cartagena, Santa Marta o Barranquilla. A paritr de</td></tr>
-										<tr style="vertical-align:top;" ><td class="h2" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-weight:normal;Padding-bottom:0px;text-align:center;" ><span class="h4" style="font-weight:normal;Padding-bottom:15px;text-align:center;padding-top:13px;" >COP </span>106.800</td></tr>
-									</table>
-								</td>
-							</tr>
-							<tr style="vertical-align:top;">
-								<td valign="top" height="10" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="10" alt="" border="0" style="border-width:0;display:block;" /></td>
-							</tr>
-							<tr style="vertical-align:top;">
-								<td valign="top" height="2" bgcolor="#008584" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="2" alt="" border="0" style="border-width:0;display:block;" /></td>
-							</tr>
-						</table>
-					</td>
-					<td valign="top" width="3%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="1" alt="" border="0" style="border-width:0;" /></td>
-				</tr>
-				</table></td></tr>
-				<tr><td width="100%" bgcolor="#ffffff" height="20" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="20" style="border-width:0;" ></td></tr>
-				<tr><td><table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
-				<tr>
-					<td valign="top" width="3%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="1" alt="" border="0" style="border-width:0;" /></td>
-					<td class="one-column" width="94%" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
-						<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
-							<tr>
-								<td class="inner contents" style="padding-top:5px;padding-bottom:5px;padding-right:5px;padding-left:5px;width:100%;text-align:left;" >
-									<p align="center" class="texto" style="Margin:0;font-size:14px;Margin-bottom:10px;text-align:center;" >Ida e volta &ndash; Impostos e taxas inclu&iacute;dos<br>Paga em 10 parcelas sem juros</p>
-								</td>
-							</tr>
+							{{#exist_var paragraphsBottom}}
+								<tr>
+									<td class="inner contents" style="padding-top:5px;padding-bottom:5px;padding-right:5px;padding-left:5px;width:100%;text-align:left;" >
+										{{#each paragraphsBottom}}
+											{{#if this.bold}}
+												<p class="texto" style="Margin:0;font-size:14px;Margin-bottom:10px; text-align:center;" ><strong>{{{this.text}}}</strong></p>
+											{{else}}
+												<p class="texto" style="Margin:0;font-size:14px;Margin-bottom:10px; text-align:center;" >{{{this.text}}}</p>
+											{{/if}}
+										{{/each}}
+									</td>
+								</tr>
+							{{/exist_var}}
 							<!-- boton CTA -->
 							<tr>
 								<td width="100%" bgcolor="#ffffff" style="background-color:#ffffff;text-align:center;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
@@ -769,7 +831,7 @@ line-height: 33px;
 													<tr>
 														<td valign="top" width="1" bgcolor="#ed982c" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="1" alt="" border="0" style="display:block;border-width:0;" /></td>
 														<td width="100%" align="center" bgcolor="#fbc126" style="background-color:#fbc126;padding-top:10px;padding-bottom:10px;padding-right:0;padding-left:0;text-align:center;" >
-															<a href="#" target="_blank" style="text-decoration:none;display:block;color:#000000;font-weight:bold;" ><font  face="Verdana, Arial, Helvetica, sans-serif" style="font-size:14px;" >Compra</font></a>
+															<a href="{{{utm}}}" target="_blank" style="text-decoration:none;display:block;color:#000000;font-weight:bold;" ><font  face="Verdana, Arial, Helvetica, sans-serif" style="font-size:14px;" >Compra</font></a>
 														</td>
 														<td valign="top" width="1" bgcolor="#ed982c" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="1" alt="" border="0" style="display:block;border-width:0;" /></td>
 													</tr>
@@ -792,7 +854,7 @@ line-height: 33px;
 								<td width="100%" bgcolor="#ffffff" style="background-color:#ffffff;text-align:center;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
 									<table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
 										<tr>
-											<td class="logoAV" width="30.77%" align="center" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><a href="http://www.avianca.com/" target="_blank" style="color:#ED1C24;text-decoration:underline;" ><img src="http://images-aviancataca.com/mail/images/ecomm/far/fem/log-fem-avianca-com.png" border="0" style="border-width:0;width:100%;max-width:140px;height:auto;" ></a></td>
+											<td class="logoAV" width="30.77%" align="center" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><a href="{{{utm}}}" target="_blank" style="color:#ED1C24;text-decoration:underline;" ><img src="http://images-aviancataca.com/mail/images/ecomm/far/fem/log-fem-avianca-com.png" border="0" style="border-width:0;width:100%;max-width:140px;height:auto;" ></a></td>
 											<td width="38.46%" align="center" style="text-align:center;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
 												<table align="center" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
 													<tr>
@@ -828,21 +890,13 @@ line-height: 33px;
 								<td align="left" width="100%" bgcolor="#ffffff" style="background-color:#ffffff;text-align:left;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
 									<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
 										<strong><font color="#000000">Restri&ccedil;&otilde;es e Generalidades: </font></strong>
-											Estas tarifas aplican exclusivamente para compras realizadas en Avianca.com; si deseas hacerlo a trav&eacute;s de otros canales aplica un cargo adicional.<img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" />
-											V&aacute;lido para compras en Costa Rica.<img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" />
-											Viaja entre el 19 de mayo y el 27 de noviembre de 2017.<img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" /> 
-											Las fechas de vuelo dependen del destino seleccionado.<img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" /> 
-											Las tarifas son ida y regreso, impuestos y cargos incluidos.<img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" />
-											Las promociones no son acumulables.<img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" /> 
-											Las tarifas promocionales descritas pueden ser combinadas con otras tarifas siempre y cuando se cumplan con todas las condiciones de la tarifa m&aacute;s restrictiva.<img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" />
-											Otro tipo de descuentos no aplican para esta promoci&oacute;n.<img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" />
-											Tarifas sujetas a cambios sin previo aviso.<img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" />
-											No aplica para fechas espec&iacute;ficas.<img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" />
-											Tarifas sujetas a disponibilidad de cupo.<img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" />
-											Los valores son aproximados.
-											Aplica descuento para ni&ntilde;os.<img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" /> 
-											Aplica para vuelos operados por Avianca, TACA, y/o Lacsa.<img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" />
-											Compra en Avianca.com y conoce m&aacute;s t&eacute;rminos y condiciones de viaje.
+											{{#each termAndCond}}
+												{{#if @last}}
+													{{{this}}}
+												{{else}}
+													{{{this}}} <img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" />
+												{{/if}}
+											{{/each}}
 									</font>
 								</td>
 							</tr>

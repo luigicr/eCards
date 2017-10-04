@@ -497,14 +497,14 @@
 													<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff;">
 														
 														<tr><td class="h1" style="font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff; text-align:center;"><span class="txtWhite" style="font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff;letter-spacing:initial;">
-															{{#each titleBanner}}
-																{{#if @last}}
-																	{{{this}}}
-																{{else}}
-																	{{{this}}}<br/>
-																{{/if}}
-															{{/each}}
-														</span></td></tr>
+																{{#each titleBanner}}
+																	{{#if @last}}
+																		{{{this}}}
+																	{{else}}
+																		{{{this}}}<br/>
+																	{{/if}}
+																{{/each}}
+															</span></td></tr>
 														{{#exist_var subtitleBanner}}
 															<tr><td style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff; font-size:12px;text-align:center; Padding-top:10px; Padding-left:20px; Padding-right:20px;">
 																{{#each subtitleBanner}}
@@ -523,7 +523,6 @@
 																<tr><td class="h11" style="font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff; text-align:center; Padding-top:0px; Padding-bottom:0px; font-size:36px;"><span style="font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff; font-size:22px;">{{this.currency}}</span> {{this.price}}</td></tr>
 															{{/if}}
 														{{/each}}
-														
 														<tr><td width="100%" bgcolor="#ea2127" height="15" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="15" style="border-width:0;" ></td></tr>
 														<tr>
 															<td width="100%" style="text-align:center;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
@@ -575,7 +574,7 @@
 									<td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0; background-color: #ffffff;">
 									  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;width:100%;text-align:center;" >  
 									  <tr>
-									  <td><a href="{{{utm}}}" target="_blank"><img src="{{{img}}}" alt="" style="border-width:0;width:100%;max-width:345px;height:auto;text-align:center;" /></a></td>
+									  <td><img src="{{{img}}}" alt="" style="border-width:0;width:100%;max-width:345px;height:auto;text-align:center;" /></td>
 									  </tr>
 									  
 									  </table>
@@ -592,28 +591,33 @@
 						<![endif]-->
 					</td>
 				</tr>
-				
-				<!-- fin texto / banner -->
-				
 				<tr>
 					<td align="center" class="one-column" width="100%" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0; text-align:center;" >
-						<img src="http://images-aviancataca.com/mail/far/far1805/images/logo_curazao.jpg" style="width: 100%;max-width: 184px; height: auto;" alt="" />
+						<img src="{{{imgcobrand}}}" style="max-width: 100%; height: auto;" alt="" />
 					</td>
 				</tr>
+				<!-- fin texto / banner -->
+				
 				<tr><td width="100%" bgcolor="#ffffff" height="20" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="20" style="border-width:0;" ></td></tr>
 				<tr><td><table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
 				<tr>
 					<td valign="top" width="3%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="1" alt="" border="0" style="border-width:0;" /></td>
 					<td class="one-column" width="94%" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
 						<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
-							<tr>
-								<td class="inner contents" style="padding-top:5px;padding-bottom:5px;padding-right:5px;padding-left:5px;width:100%;text-align:left;" >
-									<p class="texto" style="Margin:0;font-size:14px;Margin-bottom:10px; text-align:center;" >Ida y regreso en Clase Econ&oacute;mica<br>
-                                    Compra hasta el 29 de mayo de 2017</p>
-								</td>
-							</tr>
-							
-							<tr><td width="100%" bgcolor="#ffffff" height="20" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="20" style="border-width:0;" ></td></tr>
+							{{#exist_var paragraphs}}
+								<tr>
+									<td class="inner contents" style="padding-top:5px;padding-bottom:5px;padding-right:5px;padding-left:5px;width:100%;text-align:left;" >
+										{{#each paragraphs}}
+											{{#if this.bold}}
+												<p class="texto" style="Margin:0;font-size:14px;Margin-bottom:10px; text-align:center;" ><strong>{{{this.text}}}</strong></p>
+											{{else}}
+												<p class="texto" style="Margin:0;font-size:14px;Margin-bottom:10px; text-align:center;" >{{{this.text}}}</p>
+											{{/if}}
+										{{/each}}
+									</td>
+								</tr>
+								<tr><td width="100%" bgcolor="#ffffff" height="20" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="20" style="border-width:0;" ></td></tr>
+							{{/exist_var}}
 							<tr><td width="100%" bgcolor="#e1e1e1" style="background-color:#e1e1e1;font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="1" width="1" style="border-width:0;display:block;" ></td></tr>
 							<tr><td width="100%" bgcolor="#ffffff" height="20" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="20" style="border-width:0;" ></td></tr>
 							<!-- logo AV, redes sociales, logo LM -->
@@ -657,10 +661,13 @@
 								<td align="left" width="100%" bgcolor="#ffffff" style="background-color:#ffffff;text-align:left;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
 									<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
 										<strong><font color="#000000">T&eacute;rminos y Condiciones: </font></strong>
-											Los valores aplican en Avianca.com en Colombia o comprando a trav&eacute;s de nuestra aplicaci&oacute;n m&oacute;vil. <img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" /> Compra entre el 23 y el 29 de mayo de 2017. <img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" /> Inicia tu vuelo entre el 24 de mayo y el 30 de noviembre de 2017. <img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" /> No aplica en fechas espec&iacute;ficas, puentes festivos, ni temporada alta. <img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" /> Aplica un m&iacute;nimo de estad&iacute;a de viernes en la noche.<img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" /> Tarifas no reembolsables.<img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" />  Puedes hacer cambios de fecha pagando una penalidad entre USD 115. <img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" /> No es acumulable con otras promociones y/o descuentos. <img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" /> Los valores son aproximados. <img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" /> Tarifas sujetas a disponibilidad de cupo. <img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" />   Las tarifas podr&iacute;an cambiar o ser canceladas sin previo aviso.<img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" /> 
-Sillas disponibles: 1.000. <img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" /> 
-Vuelos operados por Avianca, TACA y/o Lacsa. <img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" /> 
- Conoce m&aacute;s condiciones y restricciones haciendo <a href="http://www.avianca.com/es-co/promociones/detalle-promocion.aspx?idpromo=curco-99&amp;reqfromappmobile=true&amp;utm_source=mailing&amp;utm_medium=directo&amp;utm_campaign=co-___-ml-es-ml-br-al-oxd-int-co_170523_29_int_promoglobalcur&amp;utm_content=display">clic aqu&iacute;</a>.
+											{{#each termAndCond}}
+												{{#if @last}}
+													{{{this}}}
+												{{else}}
+													{{{this}}} <img src="http://images-aviancataca.com/mail/images/ecomm/far/av-temp-img-bullet.gif" width="4" height="4" />
+												{{/if}}
+											{{/each}}
 									</font>
 								</td>
 							</tr>

@@ -484,15 +484,17 @@ line-height: 33px;
 												{{/if}}
 											{{/each}}
 										</span></td></tr>
-										<tr><td style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff; font-size:12px;text-align:center; Padding-top:10px;">
-											{{#each subtitleBanner}}
-												{{#if @last}}
-													{{{this}}}
-												{{else}}
-													{{{this}}}<br/>
-												{{/if}}
-											{{/each}}
-										</td></tr>
+										{{#exist_var subtitleBanner}}
+											<tr><td style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff; font-size:12px;text-align:center; Padding-top:10px;">
+												{{#each subtitleBanner}}
+													{{#if @last}}
+														{{{this}}}
+													{{else}}
+														{{{this}}}<br/>
+													{{/if}}
+												{{/each}}
+											</td></tr>
+										{{/exist_var}}
 										{{#each titlePrice}}
 											<tr><td class="h1" style="font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff; text-align:center; Padding-top:5px; Padding-bottom:0px;"><span style="font-family:Verdana, Arial, Helvetica, sans-serif;color:#ffffff; font-size:22px;">{{this.currency}}</span> {{this.price}}</td></tr>
 										{{/each}}
@@ -521,23 +523,27 @@ line-height: 33px;
 											<td class="inner contents" style="padding-top:5px;padding-bottom:5px;padding-right:5px;padding-left:5px;width:100%;text-align:left;" >
 												<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
 												<tr><td width="100%" bgcolor="#ffffff" height="10" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="10" style="border-width:0;" ></td></tr>
-												<tr><td class="h11" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:24px;color:#ea2225;text-align:center;" >
-													{{#each titlePromo}}
-														{{#if @last}}
-															{{{this}}}
+												{{#exist_var titlePromo}}
+													<tr><td class="h11" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:24px;color:#ea2225;text-align:center;" >
+														{{#each titlePromo}}
+															{{#if @last}}
+																{{{this}}}
+															{{else}}
+																{{{this}}}<br/>
+															{{/if}}
+														{{/each}}
+													</td></tr>
+												{{/exist_var}}
+												{{#exist_var paragraphsTop}}
+													<tr><td width="100%" bgcolor="#ffffff" height="20" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="20" style="border-width:0;" ></td></tr>
+													{{#each paragraphsTop}}
+														{{#if this.bold}}
+															<tr><td class="texto" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:14px;Margin-bottom:10px;text-align:center;"><strong>{{{this.text}}}</strong></td></tr>
 														{{else}}
-															{{{this}}}<br/>
+															<tr><td class="texto" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:14px;Margin-bottom:10px;text-align:center;">{{{this.text}}}</td></tr>
 														{{/if}}
 													{{/each}}
-												</td></tr>
-												<tr><td width="100%" bgcolor="#ffffff" height="20" style="font-size:0px;line-height:1px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" height="20" style="border-width:0;" ></td></tr>
-												{{#each paragraphsTop}}
-													{{#if this.bold}}
-														<tr><td class="texto" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:14px;Margin-bottom:10px;text-align:center;"><strong>{{{this.text}}}</strong></td></tr>
-													{{else}}
-														<tr><td class="texto" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:14px;Margin-bottom:10px;text-align:center;">{{{this.text}}}</td></tr>
-													{{/if}}
-												{{/each}}
+												{{/exist_var}}
 												</table>
 											</td>
 										</tr>
@@ -791,17 +797,19 @@ line-height: 33px;
 					<td valign="top" width="3%" bgcolor="#ffffff" style="font-size:0px;line-height:0px;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><img src="http://images-aviancataca.com/mail/images/lyf-trans-dot.gif" width="1" height="1" alt="" border="0" style="border-width:0;" /></td>
 					<td class="one-column" width="94%" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
 						<table width="100%" style="border-spacing:0;font-family:Verdana, Arial, Helvetica, sans-serif;color:#333333;" >
-							<tr>
-								<td class="inner contents" style="padding-top:5px;padding-bottom:5px;padding-right:5px;padding-left:5px;width:100%;text-align:left;" >
-									{{#each paragraphsBottom}}
-										{{#if this.bold}}
-											<p class="texto" style="Margin:0;font-size:14px;Margin-bottom:10px; text-align:center;" ><strong>{{{this.text}}}</strong></p>
-										{{else}}
-											<p class="texto" style="Margin:0;font-size:14px;Margin-bottom:10px; text-align:center;" >{{{this.text}}}</p>
-										{{/if}}
-									{{/each}}
-								</td>
-							</tr>
+							{{#exist_var paragraphsBottom}}
+								<tr>
+									<td class="inner contents" style="padding-top:5px;padding-bottom:5px;padding-right:5px;padding-left:5px;width:100%;text-align:left;" >
+										{{#each paragraphsBottom}}
+											{{#if this.bold}}
+												<p class="texto" style="Margin:0;font-size:14px;Margin-bottom:10px; text-align:center;" ><strong>{{{this.text}}}</strong></p>
+											{{else}}
+												<p class="texto" style="Margin:0;font-size:14px;Margin-bottom:10px; text-align:center;" >{{{this.text}}}</p>
+											{{/if}}
+										{{/each}}
+									</td>
+								</tr>
+							{{/exist_var}}
 							<!-- boton CTA -->
 							<tr>
 								<td width="100%" bgcolor="#ffffff" style="background-color:#ffffff;text-align:center;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
