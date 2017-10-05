@@ -92,6 +92,9 @@ module.exports = {
       case 'odd-one-more':
         templateDir += '4-destinos-pares-una-o-más-tarifas.html'
         break;
+      case 'economic-executive-odd':
+        templateDir += '6-clase-económica-o-ejecutiva-destinos-pares.html'
+        break;
       default:
         // return error
     }

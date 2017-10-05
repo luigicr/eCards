@@ -75,6 +75,10 @@
       }
     },
 
+    // Group paragh Object into text, bold
+    // @arrayElem: Array of paragh values
+    // @strong: Array of checkboxes
+    // @name: name to filter the correct checkboxes
     groupTextBold: function (arrayElem, strong, name) {
       var checkboxes,
         formatedPair = [];
@@ -91,6 +95,11 @@
       return formatedPair;
     },
 
+    // Group city Object into text, subtext, national
+    // @city: Array of cities
+    // @subcity: Array of cities sub text
+    // @strong: Array of checkboxes
+    // @name: name to filter the correct checkboxes
     groupCity: function (city, subcity, strong, name) {
       var checkboxes,
         temp,
@@ -110,6 +119,8 @@
       return formatedPair;
     },
 
+    // Group Price into currency price Object
+    // @arrayElem: Array of price elements
     groupPairPrices: function (arrayElem) {
       var pair,
         formatedPair = [];
@@ -125,6 +136,11 @@
       return formatedPair;
     },
 
+    // Filter element by name and return array of values or value
+    // @serialized: serialized array object of form elements
+    // @elemName: the name of element to filter
+    // @isArray: require return an array
+    // @encode: return value encoded (default is true)
     getValues: function (serialized, elemName, isArray, encode) {
       var itemArray,
         isEncoded = !(typeof encode !== 'undefined');
@@ -148,6 +164,10 @@
       return isEncoded ? he.encode(itemArray[0].value) : itemArray[0].value;
     },
 
+    // Serialize form elements into correct format for post endpoint
+    // @form: the container form
+    // @checkboxes: checkboxes from form (serializeArray ignore non checked)
+    // @img: image element (serializeArray ignore input type file)
     serializeAllOptimized: function (form, checkboxes, img) {
       var serialized,
         temp,
@@ -159,10 +179,6 @@
       chkboxes = checkboxes.map(function () {
         return { value: this.checked ? '1' : '', name: this.name };
       });
-
-      // serialized = $(serialized).filter(function (index, item) {
-      //   return item.value !== '' || item.name === 'subCities';
-      // });
 
       // Global elements
       objJSON.template = form.data('template');
