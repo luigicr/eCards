@@ -26,8 +26,8 @@
             <li><a href="#economic-or-executive" data-toggle="tab">clase económica o ejecutiva</a></li>
             <li><a href="#even-one-more" data-toggle="tab">destinos impares, una o más tarifas</a></li>
             <li><a href="#odd-one-more" data-toggle="tab">destinos pares, una o más tarifas</a></li>
-            <li><a href="#" data-toggle="tab">clase económica o ejecutiva, destinos impares</a></li>
-            <li><a href="#" data-toggle="tab">clase económica o ejecutiva, destinos pares</a></li>
+            <li><a href="#economic-executive-even" data-toggle="tab">clase económica o ejecutiva, destinos impares</a></li>
+            <li><a href="#economic-executive-odd" data-toggle="tab">clase económica o ejecutiva, destinos pares</a></li>
           </ul>
         </div>
       </div>
@@ -859,6 +859,509 @@
         </form>
       </div>
 
+      <!-- ECOMONIC OR EXECUTIVE, EVEN -->
+      <div role="tabpanel" class="tab-pane col-xs-12" id="economic-executive-even">
+        <form class="form-economic-executive-even" data-template="economic-executive-even">
+          <!-- UTM Language -->
+          <fieldset>
+            <legend>UTM</legend>
+            <div class="row">
+              <div class="form-group col-xs-4">
+                <label for="tpl-ecard-name">Folder Name</label>
+                <input type="text" name="ecardName" class="form-control" id="tpl-ecard-name" placeholder="Folder Name">
+              </div>
+              <div class="form-group col-xs-4">
+                <label for="tpl-url">UTM</label>
+                <input type="text" name="utm" class="form-control" id="tpl-url" placeholder="UTM">
+              </div>
+              <div class="form-group col-xs-4">
+                <label for="tpl-language">Idioma:</label>
+                <select id="tpl-language" name="language" class="form-control">
+                  <option value="es">Español</option>
+                  <option value="en">Inglés</option>
+                  <option value="pt">Portugues</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- HEADER -->
+          <fieldset>
+            <legend>Header section</legend>
+            <div class="row">
+              <div class="col-xs-6 form-group">
+                <label for="tpl-header">Header text</label>
+                <input type="text" name="titleTop" class="form-control" id="tpl-header" placeholder="Header text">
+              </div>
+              <div class="col-xs-6"><a href="#" id="">Puedes abrir este mensaje en tu...</a></div>
+              <div class="col-xs-12">
+                  Avianca LOGO | STAR ALLIANCE
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- JUMBOTRON -->
+          <fieldset>
+            <legend>Banner (Área Roja)</legend>
+            <div class="row">
+
+              <div class="col-xs-6">
+                <div class="headline-economic-executive-even">
+                  <div class="row" data-item="0">
+                    <div class="form-group col-xs-10">
+                      <label for="tpl-headline">Headline</label>
+                      <input type="text" name="titleBanner" class="form-control" id="tpl-headline" placeholder="Headline">
+                    </div>
+                    <div class="col-xs-2 form-group">
+                      <button type="button" title="Agregar otro headline" class="btn btn-default pull-right add-headline add-item btn-success">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sub-headline-economic-executive-even">
+                  <div class="row" data-item="0">
+                    <div class="form-group col-xs-10">
+                      <label for="tpl-sub-headline">Sub Headline</label>
+                      <input type="text" name="subtitleBanner" class="form-control" id="tpl-sub-headline" placeholder="Sub Headline">
+                    </div>
+
+                    <div class="col-xs-2 form-group">
+                      <button type="button" title="Agregar otro sub headline" class="btn btn-default btn-success pull-right add-sub-headline add-item">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="price-economic-executive-even">
+                  <div class="row" data-item="0">
+                    <div class="form-group col-xs-5">
+                      <label for="tpl-headline-currency">Moneda</label>
+                      <input type="text" name="titlePrice" class="form-control" id="tpl-headline-currency" placeholder="Moneda">
+                    </div>
+                    <div class="form-group col-xs-5">
+                      <label for="tpl-headline-price">Precio</label>
+                      <input type="text" name="titlePrice" class="form-control" id="tpl-headline-price" placeholder="Precio">
+                    </div>
+                    <div class="col-xs-2 form-group">
+                      <button type="button" title="Agregar otro precio" class="btn btn-default btn-success pull-right add-headline-price add-item">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6">
+
+                <div class="form-group">
+                  <label for="tpl-headline-image">Imagen</label>
+                  <input type="file" name="tpl-headline-image" class="form-control image-even-one-more" id="tpl-headline-image" placeholder="Imagen" accept="image/x-png,image/gif,image/jpeg">
+                </div>
+                <img id="img" class="img-preview hidden" src="#" alt="your image" />
+
+              </div>
+
+            </div>
+          </fieldset>
+
+          <!-- CONTENT -->
+          <fieldset>
+            <legend>Área Informátiva</legend>
+            <div class="info-headline-economic-executive-even">
+              <div class="row" data-item="0">
+                <div class="form-group col-xs-10">
+                  <label for="tpl-content">Título promoción</label>
+                  <input type="text" name="titlePromo" class="form-control" id="tpl-content" placeholder="Infomación">
+                </div>
+                <div class="col-xs-2 form-group">
+                  <button type="button" title="Agregar otra información" class="btn btn-default btn-success pull-right add-info add-item">
+                    <span class="glyphicon glyphicon-plus"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="info-top-economic-executive-even">
+              <div class="row" data-item="0">
+                <div class="form-group col-xs-8">
+                  <label for="tpl-content">Infomación</label>
+                  <input type="text" name="paragraphsTop" class="form-control" id="tpl-content" placeholder="Infomación">
+                </div>
+                <div class="checkbox col-xs-2">
+                  <label><input type="checkbox" name="paragraphsTop">Strong</label>
+                </div>
+                <div class="col-xs-2 form-group">
+                  <button type="button" title="Agregar otra información" class="btn btn-default btn-success pull-right add-info add-item">
+                    <span class="glyphicon glyphicon-plus"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- CITIES -->
+          <fieldset>
+            <legend>Cuidades Clase Ejecutiva</legend>
+            <div class="cities-economic-economic-executive-even">
+              <div class="row" data-item="0">
+                <div class="col-xs-8 form-group">
+                  <label for="city-name-even-one-more">Cuidad</label>
+                  <input type="text" class="form-control" id="city-name-even-one-more" name="citiesExecutive">
+                </div>
+                <div class="checkbox col-xs-2">
+                  <label><input type="checkbox" name="citiesExecutive">Nacional</label>
+                </div>
+                <div class="col-xs-2 form-group">
+                  <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city add-item">
+                    <span class="glyphicon glyphicon-plus"></span>
+                  </button>
+                </div>
+
+                <div class="col-xs-12 cities-prices">
+                  <div class="row" data-item="0">
+                    <div class="col-xs-3 form-group">
+                      <label for="currency-name-even-one-more">Moneda</label>
+                      <input type="text" class="form-control" id="currency-name-even-one-more" name="citiesPrice">
+                    </div>
+                    <div class="col-xs-3 form-group">
+                      <label for="price-name-even-one-more">Precio</label>
+                      <input type="text" class="form-control" id="price-name-even-one-more" name="citiesPrice">
+                    </div>
+                    <div class="col-xs-2 form-group">
+                      <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city-price">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- CONTENT END -->
+          <fieldset>
+            <legend>Leyenda final</legend>
+            <div class="info-bottom-even-one-more">
+              <div class="row" data-item="0">
+                <div class="form-group col-xs-8">
+                  <label for="tpl-content">Infomación</label>
+                  <input type="text" name="paragraphsBottom" class="form-control" id="tpl-content" placeholder="Infomación">
+                </div>
+                <div class="checkbox col-xs-2">
+                  <label><input type="checkbox" name="paragraphsBottom">Strong</label>
+                </div>
+                <div class="col-xs-2 form-group">
+                  <button type="button" title="Agregar otra información" class="btn btn-default btn-success pull-right add-info add-item">
+                    <span class="glyphicon glyphicon-plus"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <!-- SOCIAL -->
+          <!-- <fieldset>
+            <legend>Área de redes sociales</legend>
+            <p><a href="avianca.com">Avianca.com</a> FB TW INSTA YT <a href="lifemiles.com">LifeMiles</a></p>
+            <p>Para recibir nuestros mensajes, guarda...</p>
+          </fieldset> -->
+
+          <!-- TERMS & CODITIONS -->
+          <fieldset>
+            <legend>Términos y Condiciones</legend>
+            <div class="terms-even-one-more">
+              <div class="row" data-item="0">
+              <div class="form-group col-xs-10">
+                <label for="tpl-terms">Términos y condiciones</label>
+                <input type="text" name="termAndCond" class="form-control" id="tpl-terms" placeholder="Términos y condiciones">
+              </div>
+              <div class="col-xs-2 form-group">
+                <button type="button" title="Agregar otro término o condición" class="btn btn-default btn-success pull-right add-terms add-item">
+                  <span class="glyphicon glyphicon-plus"></span>
+                </button>
+              </div>
+              </div>
+            </div>
+
+            <script id="hidden-fligth-itinerary" type="text/x-custom-template"/>
+            </script>
+          </fieldset>
+          <!-- FOOTER -->
+          <button type="submit" class="btn btn-default btn-one-fare">Submit</button>
+        </form>
+      </div>
+
+      <!-- ECOMONIC OR EXECUTIVE, ODD -->
+      <div role="tabpanel" class="tab-pane col-xs-12" id="economic-executive-odd">
+        <form class="form-economic-executive-odd" data-template="economic-executive-odd">
+          <!-- UTM Language -->
+          <fieldset>
+            <legend>UTM</legend>
+            <div class="row">
+              <div class="form-group col-xs-4">
+                <label for="tpl-ecard-name">Folder Name</label>
+                <input type="text" name="ecardName" class="form-control" id="tpl-ecard-name" placeholder="Folder Name">
+              </div>
+              <div class="form-group col-xs-4">
+                <label for="tpl-url">UTM</label>
+                <input type="text" name="utm" class="form-control" id="tpl-url" placeholder="UTM">
+              </div>
+              <div class="form-group col-xs-4">
+                <label for="tpl-language">Idioma:</label>
+                <select id="tpl-language" name="language" class="form-control">
+                  <option value="es">Español</option>
+                  <option value="en">Inglés</option>
+                  <option value="pt">Portugues</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- HEADER -->
+          <fieldset>
+            <legend>Header section</legend>
+            <div class="row">
+              <div class="col-xs-6 form-group">
+                <label for="tpl-header">Header text</label>
+                <input type="text" name="titleTop" class="form-control" id="tpl-header" placeholder="Header text">
+              </div>
+              <div class="col-xs-6"><a href="#" id="">Puedes abrir este mensaje en tu...</a></div>
+              <div class="col-xs-12">
+                  Avianca LOGO | STAR ALLIANCE
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- JUMBOTRON -->
+          <fieldset>
+            <legend>Banner (Área Roja)</legend>
+            <div class="row">
+
+              <div class="col-xs-6">
+                <div class="headline-economic-executive-odd">
+                  <div class="row" data-item="0">
+                    <div class="form-group col-xs-10">
+                      <label for="tpl-headline">Headline</label>
+                      <input type="text" name="titleBanner" class="form-control" id="tpl-headline" placeholder="Headline">
+                    </div>
+                    <div class="col-xs-2 form-group">
+                      <button type="button" title="Agregar otro headline" class="btn btn-default pull-right add-headline add-item btn-success">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sub-headline-economic-executive-odd">
+                  <div class="row" data-item="0">
+                    <div class="form-group col-xs-10">
+                      <label for="tpl-sub-headline">Sub Headline</label>
+                      <input type="text" name="subtitleBanner" class="form-control" id="tpl-sub-headline" placeholder="Sub Headline">
+                    </div>
+
+                    <div class="col-xs-2 form-group">
+                      <button type="button" title="Agregar otro sub headline" class="btn btn-default btn-success pull-right add-sub-headline add-item">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="price-economic-executive-odd">
+                  <div class="row" data-item="0">
+                    <div class="form-group col-xs-5">
+                      <label for="tpl-headline-currency">Moneda</label>
+                      <input type="text" name="titlePrice" class="form-control" id="tpl-headline-currency" placeholder="Moneda">
+                    </div>
+                    <div class="form-group col-xs-5">
+                      <label for="tpl-headline-price">Precio</label>
+                      <input type="text" name="titlePrice" class="form-control" id="tpl-headline-price" placeholder="Precio">
+                    </div>
+                    <div class="col-xs-2 form-group">
+                      <button type="button" title="Agregar otro precio" class="btn btn-default btn-success pull-right add-headline-price add-item">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6">
+
+                <div class="form-group">
+                  <label for="tpl-headline-image">Imagen</label>
+                  <input type="file" name="tpl-headline-image" class="form-control image-economic-executive-odd" id="tpl-headline-image" placeholder="Imagen" accept="image/x-png,image/gif,image/jpeg">
+                </div>
+                <img id="img" class="img-preview hidden" src="#" alt="your image" />
+
+              </div>
+
+            </div>
+          </fieldset>
+
+          <!-- CONTENT -->
+          <fieldset>
+            <legend>Área Informátiva</legend>
+            <div class="info-headline-economic-executive-odd">
+              <div class="row" data-item="0">
+                <div class="form-group col-xs-10">
+                  <label for="tpl-content">Título promoción</label>
+                  <input type="text" name="titlePromo" class="form-control" id="tpl-content" placeholder="Infomación">
+                </div>
+                <div class="col-xs-2 form-group">
+                  <button type="button" title="Agregar otra información" class="btn btn-default btn-success pull-right add-info add-item">
+                    <span class="glyphicon glyphicon-plus"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="info-top-economic-executive-odd">
+              <div class="row" data-item="0">
+                <div class="form-group col-xs-8">
+                  <label for="tpl-content">Infomación</label>
+                  <input type="text" name="paragraphsTop" class="form-control" id="tpl-content" placeholder="Infomación">
+                </div>
+                <div class="checkbox col-xs-2">
+                  <label><input type="checkbox" name="paragraphsTop">Strong</label>
+                </div>
+                <div class="col-xs-2 form-group">
+                  <button type="button" title="Agregar otra información" class="btn btn-default btn-success pull-right add-info add-item">
+                    <span class="glyphicon glyphicon-plus"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- CITIES -->
+          <fieldset>
+            <legend>Cuidades Clase Económica</legend>
+            <div class="cities-economic-executive-odd economic">
+              <div class="row" data-item="0">
+                <div class="col-xs-5 form-group">
+                  <label for="city-name-odd-one-more">Cuidad</label>
+                  <input type="text" class="form-control" id="city-name-odd-one-more" name="citiesEconomic">
+                </div>
+                <div class="col-xs-3 form-group">
+                  <label for="sub-city-name-odd-one-more">Sub texto</label>
+                  <input type="text" class="form-control" id="sub-city-name-odd-one-more" name="subCitiesEconomic">
+                </div>
+                <div class="checkbox col-xs-2">
+                  <label><input type="checkbox" name="citiesEconomic">Nacional</label>
+                </div>
+                <div class="col-xs-2 form-group">
+                  <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city add-item">
+                    <span class="glyphicon glyphicon-plus"></span>
+                  </button>
+                </div>
+
+                <div class="col-xs-12 cities-prices-economic-executive-odd economic">
+                  <div class="row" data-item="0">
+                    <div class="col-xs-3 form-group">
+                      <label for="currency-name-odd-one-more">Moneda</label>
+                      <input type="text" class="form-control" id="currency-name-odd-one-more" name="citiesPriceEconomic">
+                    </div>
+                    <div class="col-xs-3 form-group">
+                      <label for="price-name-odd-one-more">Precio</label>
+                      <input type="text" class="form-control" id="price-name-odd-one-more" name="citiesPriceEconomic">
+                    </div>
+                    <div class="col-xs-2 form-group">
+                      <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city-price">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <legend>Cuidades Clase Ejecutiva</legend>
+            <div class="cities-economic-executive-odd executive">
+              <div class="row" data-item="0">
+                <div class="col-xs-5 form-group">
+                  <label for="city-name-odd-one-more">Cuidad</label>
+                  <input type="text" class="form-control" id="city-name-odd-one-more" name="citiesExecutive">
+                </div>
+                <div class="col-xs-3 form-group">
+                  <label for="sub-city-name-odd-one-more">Sub texto</label>
+                  <input type="text" class="form-control" id="sub-city-name-odd-one-more" name="subCitiesExecutive">
+                </div>
+                <div class="checkbox col-xs-2">
+                  <label><input type="checkbox" name="citiesExecutive">Nacional</label>
+                </div>
+                <div class="col-xs-2 form-group">
+                  <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city add-item">
+                    <span class="glyphicon glyphicon-plus"></span>
+                  </button>
+                </div>
+
+                <div class="col-xs-12 cities-prices-economic-executive-odd executive">
+                  <div class="row" data-item="0">
+                    <div class="col-xs-3 form-group">
+                      <label for="currency-name-odd-one-more">Moneda</label>
+                      <input type="text" class="form-control" id="currency-name-odd-one-more" name="citiesPriceExecutive">
+                    </div>
+                    <div class="col-xs-3 form-group">
+                      <label for="price-name-odd-one-more">Precio</label>
+                      <input type="text" class="form-control" id="price-name-odd-one-more" name="citiesPriceExecutive">
+                    </div>
+                    <div class="col-xs-2 form-group">
+                      <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city-price">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- CONTENT END -->
+          <fieldset>
+            <legend>Leyenda final</legend>
+            <div class="info-bottom-economic-executive-odd">
+              <div class="row" data-item="0">
+                <div class="form-group col-xs-8">
+                  <label for="tpl-content">Infomación</label>
+                  <input type="text" name="paragraphsBottom" class="form-control" id="tpl-content" placeholder="Infomación">
+                </div>
+                <div class="checkbox col-xs-2">
+                  <label><input type="checkbox" name="paragraphsBottom">Strong</label>
+                </div>
+                <div class="col-xs-2 form-group">
+                  <button type="button" title="Agregar otra información" class="btn btn-default btn-success pull-right add-info add-item">
+                    <span class="glyphicon glyphicon-plus"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <!-- SOCIAL -->
+          <!-- <fieldset>
+            <legend>Área de redes sociales</legend>
+            <p><a href="avianca.com">Avianca.com</a> FB TW INSTA YT <a href="lifemiles.com">LifeMiles</a></p>
+            <p>Para recibir nuestros mensajes, guarda...</p>
+          </fieldset> -->
+
+          <!-- TERMS & CODITIONS -->
+          <fieldset>
+            <legend>Términos y Condiciones</legend>
+            <div class="terms-economic-executive-odd">
+              <div class="row" data-item="0">
+              <div class="form-group col-xs-10">
+                <label for="tpl-terms">Términos y condiciones</label>
+                <input type="text" name="termAndCond" class="form-control" id="tpl-terms" placeholder="Términos y condiciones">
+              </div>
+              <div class="col-xs-2 form-group">
+                <button type="button" title="Agregar otro término o condición" class="btn btn-default btn-success pull-right add-terms add-item">
+                  <span class="glyphicon glyphicon-plus"></span>
+                </button>
+              </div>
+              </div>
+            </div>
+          </fieldset>
+          <!-- FOOTER -->
+          <button type="submit" class="btn btn-default btn-one-fare">Submit</button>
+        </form>
+      </div>
 
     </div>
   </div>

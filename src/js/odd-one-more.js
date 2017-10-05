@@ -194,10 +194,6 @@ $formOddOneMore.on('submit', function (e) {
 
   objTest = eCard.serializeAll($(this), checkboxs, img);
 
-
-  console.log(objTest.cities);
-
-
   $.ajax({
     url: '/generate',
     type: 'POST',

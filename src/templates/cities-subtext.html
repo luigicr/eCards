@@ -1,14 +1,14 @@
 <div class="row city-<%= value %>" data-item="<%= value %>">
   <div class="col-xs-5 form-group">
     <label for="city-name-odd-one-more-<%= value %>">Cuidad</label>
-    <input type="text" class="form-control" id="city-name-odd-one-more-<%= value %>" name="cities">
+    <input type="text" class="form-control" id="city-name-odd-one-more-<%= value %>" name="<%= typeof(cityName)!== 'undefined' ?  cityName : 'cities' %>">
   </div>
   <div class="col-xs-3 form-group">
     <label for="sub-city-name-odd-one-more-<%= value %>">Sub texto</label>
-    <input type="text" class="form-control" id="sub-city-name-odd-one-more-<%= value %>" name="subCities">
+    <input type="text" class="form-control" id="sub-city-name-odd-one-more-<%= value %>" name="<%= typeof(subCityName)!== 'undefined' ?  subCityName : 'subCities' %>">
   </div>
   <div class="checkbox col-xs-2">
-    <label><input type="checkbox" name="cities">Nacional</label>
+    <label><input type="checkbox" name="<%= typeof(cityName)!== 'undefined' ?  cityName : 'cities' %>">Nacional</label>
   </div>
   <div class="col-xs-1 form-group">
     <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city add-item">
