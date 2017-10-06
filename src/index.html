@@ -53,18 +53,18 @@
     <div class="row tab-content">
       <div role="tabpanel" class="tab-pane col-xs-12" id="one-destiny-fare">
         <!-- <form  action="/generate" method="post"> -->
-        <form class="form-one-fare" data-template="one-destiny-fare">
+        <form class="form-one-fare" data-template="one-destiny-fare" novalidate>
           <!-- UTM Language -->
           <fieldset>
             <legend>UTM</legend>
             <div class="row">
               <div class="form-group col-xs-4">
                 <label for="tpl-ecard-name">Folder Name</label>
-                <input type="text" name="ecardName" class="form-control" id="tpl-ecard-name" placeholder="Folder Name">
+                <input type="text" name="ecardName" class="form-control" id="tpl-ecard-name" placeholder="Folder Name" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
               </div>
               <div class="form-group col-xs-4">
                 <label for="tpl-url">UTM</label>
-                <input type="text" name="utm" class="form-control" id="tpl-url" placeholder="UTM">
+                <input type="text" name="utm" class="form-control" id="tpl-url" placeholder="UTM" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
               </div>
               <div class="form-group col-xs-4">
                 <label for="tpl-language">Idioma:</label>
@@ -83,7 +83,7 @@
             <div class="row">
               <div class="col-xs-6 form-group">
                 <label for="tpl-header">Header text</label>
-                <input type="text" name="titleTop" class="form-control" id="tpl-header" placeholder="Header text">
+                <input type="text" name="titleTop" class="form-control" id="tpl-header" placeholder="Header text" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
               </div>
               <div class="col-xs-6"><a href="#" id="">Puedes abrir este mensaje en tu...</a></div>
               <div class="col-xs-12">
@@ -101,7 +101,7 @@
                   <div class="row" data-item="0">
                     <div class="form-group col-xs-10">
                       <label for="tpl-headline">Headline</label>
-                      <input type="text" name="titleBanner" class="form-control" id="tpl-headline" placeholder="Headline">
+                      <input type="text" name="titleBanner" class="form-control" id="tpl-headline" placeholder="Headline" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                     </div>
                     <div class="col-xs-2 form-group">
                       <button type="button" title="Agregar otro headline" class="btn btn-default pull-right add-headline add-item btn-success">
@@ -148,7 +148,7 @@
 
                 <div class="form-group">
                   <label for="tpl-headline-image">Imagen</label>
-                  <input type="file" name="tpl-headline-image" class="form-control tpl-headline-image" id="tpl-headline-image" placeholder="Imagen" accept="image/x-png,image/gif,image/jpeg">
+                  <input type="file" name="tpl-headline-image" class="form-control tpl-headline-image" id="tpl-headline-image" placeholder="Imagen" accept="image/x-png,image/gif,image/jpeg" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                 </div>
                 <img id="img" class="img-preview hidden" src="#" alt="your image" />
 
@@ -191,7 +191,7 @@
               <div class="row" data-item="0">
               <div class="form-group col-xs-10">
                 <label for="tpl-terms">Términos y condiciones</label>
-                <input type="text" name="termAndCond" class="form-control" id="tpl-terms" placeholder="Términos y condiciones">
+                <input type="text" name="termAndCond" class="form-control" id="tpl-terms" placeholder="Términos y condiciones" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
               </div>
               <div class="col-xs-2 form-group">
                 <button type="button" title="Agregar otro término o condición" class="btn btn-default btn-success pull-right add-terms add-item">

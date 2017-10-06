@@ -76,7 +76,7 @@ module.exports = {
     }
 
     // select folder language
-    templateDir = './tmp-ecards/' + data.language + '/';
+    templateDir = '../tmp-ecards/' + data.language + '/';
 
     // select corresponding template
     switch (data.template) {

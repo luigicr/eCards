@@ -565,6 +565,24 @@
       return objTest;
     },
 
+    // Validate the inputs required
+    // @form: the container form
+    validationForm: function (form) {
+      var $validate = form.find('input[required="required"]'),
+        valid = true;
+
+      $validate.each(function () {
+        console.log($(this));
+        if (!$(this).val()) {
+          $(this).addClass('alert-danger').tooltip('show');
+          valid = false;
+        } else {
+          $(this).removeClass('alert-danger').tooltip('hide');
+        }
+      });
+      return valid;
+    },
+
     // Transform image from input to base64 image
     // @input: the image input container
     imgTo64: function (input) {

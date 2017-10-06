@@ -82,7 +82,7 @@ __p+='<div class="row tpl-headline-'+
 ((__t=( value ))==null?'':__t)+
 '">Headline</label> <input type="text" name="titleBanner" class="form-control" id="tpl-headline-'+
 ((__t=( value ))==null?'':__t)+
-'" placeholder="Headline"> </div> <div class="col-xs-1 form-group"> <button type="button" title="Agregar otro Headline" class="btn btn-default btn-success pull-right add-headline add-item"> <span class="glyphicon glyphicon-plus"></span> </button> </div> <div class="col-xs-1 form-group"> <button type="button" title="Remover Headline" class="btn btn-default btn-danger pull-right remove-headline remove-item"> <span class="glyphicon glyphicon-minus"></span> </button> </div> </div> ';
+'" placeholder="Headline" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top"> </div> <div class="col-xs-1 form-group"> <button type="button" title="Agregar otro Headline" class="btn btn-default btn-success pull-right add-headline add-item"> <span class="glyphicon glyphicon-plus"></span> </button> </div> <div class="col-xs-1 form-group"> <button type="button" title="Remover Headline" class="btn btn-default btn-danger pull-right remove-headline remove-item"> <span class="glyphicon glyphicon-minus"></span> </button> </div> </div> ';
 }
 return __p;
 };
