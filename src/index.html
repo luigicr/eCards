@@ -1002,12 +1002,48 @@
 
           <!-- CITIES -->
           <fieldset>
-            <legend>Cuidades Clase Ejecutiva</legend>
-            <div class="cities-economic-economic-executive-even">
+            <legend>Cuidades Clase Económica</legend>
+            <div class="cities-economic-executive-even economic">
               <div class="row" data-item="0">
                 <div class="col-xs-8 form-group">
-                  <label for="city-name-even-one-more">Cuidad</label>
-                  <input type="text" class="form-control" id="city-name-even-one-more" name="citiesExecutive">
+                  <label for="city-name-economic-executive-even">Cuidad</label>
+                  <input type="text" class="form-control" id="city-name-economic-executive-even" name="citiesEconomic">
+                </div>
+                <div class="checkbox col-xs-2">
+                  <label><input type="checkbox" name="citiesEconomic">Nacional</label>
+                </div>
+                <div class="col-xs-2 form-group">
+                  <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city add-item">
+                    <span class="glyphicon glyphicon-plus"></span>
+                  </button>
+                </div>
+
+                <div class="col-xs-12 cities-prices-economic-executive-even economic">
+                  <div class="row" data-item="0">
+                    <div class="col-xs-3 form-group">
+                      <label for="currency-name-even-one-more">Moneda</label>
+                      <input type="text" class="form-control" id="currency-name-even-one-more" name="citiesPriceEconomic">
+                    </div>
+                    <div class="col-xs-3 form-group">
+                      <label for="price-name-even-one-more">Precio</label>
+                      <input type="text" class="form-control" id="price-name-even-one-more" name="citiesPriceEconomic">
+                    </div>
+                    <div class="col-xs-2 form-group">
+                      <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city-price">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <legend>Cuidades Clase Ejecutiva</legend>
+            <div class="cities-economic-executive-even executive">
+              <div class="row" data-item="0">
+                <div class="col-xs-8 form-group">
+                  <label for="city-name-economic-executive-even">Cuidad</label>
+                  <input type="text" class="form-control" id="city-name-economic-executive-even" name="citiesExecutive">
                 </div>
                 <div class="checkbox col-xs-2">
                   <label><input type="checkbox" name="citiesExecutive">Nacional</label>
@@ -1018,15 +1054,15 @@
                   </button>
                 </div>
 
-                <div class="col-xs-12 cities-prices">
+                <div class="col-xs-12 cities-prices-economic-executive-even executive">
                   <div class="row" data-item="0">
                     <div class="col-xs-3 form-group">
                       <label for="currency-name-even-one-more">Moneda</label>
-                      <input type="text" class="form-control" id="currency-name-even-one-more" name="citiesPrice">
+                      <input type="text" class="form-control" id="currency-name-even-one-more" name="citiesPriceExecutive">
                     </div>
                     <div class="col-xs-3 form-group">
                       <label for="price-name-even-one-more">Precio</label>
-                      <input type="text" class="form-control" id="price-name-even-one-more" name="citiesPrice">
+                      <input type="text" class="form-control" id="price-name-even-one-more" name="citiesPriceExecutive">
                     </div>
                     <div class="col-xs-2 form-group">
                       <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city-price">
@@ -1042,7 +1078,7 @@
           <!-- CONTENT END -->
           <fieldset>
             <legend>Leyenda final</legend>
-            <div class="info-bottom-even-one-more">
+            <div class="info-bottom-economic-executive-even">
               <div class="row" data-item="0">
                 <div class="form-group col-xs-8">
                   <label for="tpl-content">Infomación</label>
@@ -1069,7 +1105,7 @@
           <!-- TERMS & CODITIONS -->
           <fieldset>
             <legend>Términos y Condiciones</legend>
-            <div class="terms-even-one-more">
+            <div class="terms-economic-executive-even">
               <div class="row" data-item="0">
               <div class="form-group col-xs-10">
                 <label for="tpl-terms">Términos y condiciones</label>

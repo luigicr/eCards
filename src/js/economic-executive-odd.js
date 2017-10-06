@@ -1,4 +1,4 @@
-/* eslint-disable no-console, no-unused-vars */
+/* eslint-disable no-console */
 /* global $, undefined, eCard */
 var templates = require('../../src/lib/templates.js');
 
