@@ -106,7 +106,7 @@ $form.on('submit', function (e) {
 
     e.preventDefault();
 
-    objTest = eCard.serializeAll($(this), checkboxs, img);
+    objTest = eCard.serializeAllOptimized($(this), checkboxs, img);
 
     console.log(objTest);
 

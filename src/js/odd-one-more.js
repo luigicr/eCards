@@ -192,7 +192,7 @@ $formOddOneMore.on('submit', function (e) {
 
   e.preventDefault();
   if (eCard.validationForm($(this))) {
-    objTest = eCard.serializeAll($(this), checkboxs, img);
+    objTest = eCard.serializeAllOptimized($(this), checkboxs, img);
 
     $.ajax({
       url: '/generate',
