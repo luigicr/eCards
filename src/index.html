@@ -210,18 +210,18 @@
       </div>
       <!-- ECONOMIC OR EXECUTIVE -->
       <div role="tabpanel" class="tab-pane col-xs-12" id="economic-or-executive">
-        <form class="form-economic-or-executive" data-template="economic-or-executive">
+        <form class="form-economic-or-executive" data-template="economic-or-executive" novalidate="novalidate">
           <!-- UTM Language -->
           <fieldset>
             <legend>UTM</legend>
             <div class="row">
               <div class="form-group col-xs-4">
                 <label for="tpl-ecard-name">Folder Name</label>
-                <input type="text" name="ecardName" class="form-control" id="tpl-ecard-name" placeholder="Folder Name">
+                <input type="text" name="ecardName" class="form-control" id="tpl-ecard-name" placeholder="Folder Name" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
               </div>
               <div class="form-group col-xs-4">
                 <label for="tpl-url">UTM</label>
-                <input type="text" name="utm" class="form-control" id="tpl-url" placeholder="UTM">
+                <input type="text" name="utm" class="form-control" id="tpl-url" placeholder="UTM" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
               </div>
               <div class="form-group col-xs-4">
                 <label for="tpl-language">Idioma:</label>
@@ -240,7 +240,7 @@
             <div class="row">
               <div class="col-xs-6 form-group">
                 <label for="tpl-header">Header text</label>
-                <input type="text" name="titleTop" class="form-control" id="tpl-header" placeholder="Header text">
+                <input type="text" name="titleTop" class="form-control" id="tpl-header" placeholder="Header text" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
               </div>
               <div class="col-xs-6"><a href="#" id="">Puedes abrir este mensaje en tu...</a></div>
               <div class="col-xs-12">
@@ -257,7 +257,7 @@
 
                 <div class="form-group">
                   <label for="tpl-headline-image">Imagen</label>
-                  <input type="file" name="tpl-headline-image" class="form-control image-economic-excutive" id="tpl-headline-image" placeholder="Imagen" accept="image/x-png,image/gif,image/jpeg">
+                  <input type="file" name="tpl-headline-image" class="form-control image-economic-excutive" id="tpl-headline-image" placeholder="Imagen" accept="image/x-png,image/gif,image/jpeg" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                 </div>
                 <img id="img" class="img-preview hidden" src="#" alt="your image" />
 
@@ -299,11 +299,11 @@
                   <div class="row" data-item="0">
                     <div class="form-group col-xs-5">
                       <label for="tpl-headline-currency">Moneda</label>
-                      <input type="text" name="economyClass" class="form-control" id="tpl-headline-currency" placeholder="Moneda">
+                      <input type="text" name="economyClass" class="form-control" id="tpl-headline-currency" placeholder="Moneda" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                     </div>
                     <div class="form-group col-xs-5">
                       <label for="tpl-headline-price">Precio</label>
-                      <input type="text" name="economyClass" class="form-control" id="tpl-headline-price" placeholder="Precio">
+                      <input type="text" name="economyClass" class="form-control" id="tpl-headline-price" placeholder="Precio" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                     </div>
                     <div class="col-xs-2 form-group">
                       <button type="button" title="Agregar otro precio" class="btn btn-default btn-success pull-right add-headline-price add-item">
@@ -320,11 +320,11 @@
                   <div class="row" data-item="0">
                     <div class="form-group col-xs-5">
                       <label for="tpl-headline-currency">Moneda</label>
-                      <input type="text" name="executiveClass" class="form-control" id="tpl-headline-currency" placeholder="Moneda">
+                      <input type="text" name="executiveClass" class="form-control" id="tpl-headline-currency" placeholder="Moneda" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                     </div>
                     <div class="form-group col-xs-5">
                       <label for="tpl-headline-price">Precio</label>
-                      <input type="text" name="executiveClass" class="form-control" id="tpl-headline-price" placeholder="Precio">
+                      <input type="text" name="executiveClass" class="form-control" id="tpl-headline-price" placeholder="Precio" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                     </div>
                     <div class="col-xs-2 form-group">
                       <button type="button" title="Agregar otro precio" class="btn btn-default btn-success pull-right add-headline-price add-item">
@@ -373,7 +373,7 @@
               <div class="row" data-item="0">
               <div class="form-group col-xs-10">
                 <label for="tpl-terms">Términos y condiciones</label>
-                <input type="text" name="termAndCond" class="form-control" id="tpl-terms" placeholder="Términos y condiciones">
+                <input type="text" name="termAndCond" class="form-control" id="tpl-terms" placeholder="Términos y condiciones" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
               </div>
               <div class="col-xs-2 form-group">
                 <button type="button" title="Agregar otro término o condición" class="btn btn-default btn-success pull-right add-terms add-item">
@@ -393,18 +393,18 @@
 
       <!-- EVEN, ONE OR MORE FARE -->
       <div role="tabpanel" class="tab-pane col-xs-12" id="even-one-more">
-        <form class="form-even-one-more" data-template="even-one-more">
+        <form class="form-even-one-more" data-template="even-one-more" novalidate="novalidate">
           <!-- UTM Language -->
           <fieldset>
             <legend>UTM</legend>
             <div class="row">
               <div class="form-group col-xs-4">
                 <label for="tpl-ecard-name">Folder Name</label>
-                <input type="text" name="ecardName" class="form-control" id="tpl-ecard-name" placeholder="Folder Name">
+                <input type="text" name="ecardName" class="form-control" id="tpl-ecard-name" placeholder="Folder Name" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
               </div>
               <div class="form-group col-xs-4">
                 <label for="tpl-url">UTM</label>
-                <input type="text" name="utm" class="form-control" id="tpl-url" placeholder="UTM">
+                <input type="text" name="utm" class="form-control" id="tpl-url" placeholder="UTM" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
               </div>
               <div class="form-group col-xs-4">
                 <label for="tpl-language">Idioma:</label>
@@ -423,7 +423,7 @@
             <div class="row">
               <div class="col-xs-6 form-group">
                 <label for="tpl-header">Header text</label>
-                <input type="text" name="titleTop" class="form-control" id="tpl-header" placeholder="Header text">
+                <input type="text" name="titleTop" class="form-control" id="tpl-header" placeholder="Header text" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
               </div>
               <div class="col-xs-6"><a href="#" id="">Puedes abrir este mensaje en tu...</a></div>
               <div class="col-xs-12">
@@ -442,7 +442,7 @@
                   <div class="row" data-item="0">
                     <div class="form-group col-xs-10">
                       <label for="tpl-headline">Headline</label>
-                      <input type="text" name="titleBanner" class="form-control" id="tpl-headline" placeholder="Headline">
+                      <input type="text" name="titleBanner" class="form-control" id="tpl-headline" placeholder="Headline" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                     </div>
                     <div class="col-xs-2 form-group">
                       <button type="button" title="Agregar otro headline" class="btn btn-default pull-right add-headline add-item btn-success">
@@ -489,7 +489,7 @@
 
                 <div class="form-group">
                   <label for="tpl-headline-image">Imagen</label>
-                  <input type="file" name="tpl-headline-image" class="form-control image-even-one-more" id="tpl-headline-image" placeholder="Imagen" accept="image/x-png,image/gif,image/jpeg">
+                  <input type="file" name="tpl-headline-image" class="form-control image-even-one-more" id="tpl-headline-image" placeholder="Imagen" accept="image/x-png,image/gif,image/jpeg" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                 </div>
                 <img id="img" class="img-preview hidden" src="#" alt="your image" />
 
@@ -539,7 +539,7 @@
               <div class="row" data-item="0">
                 <div class="col-xs-8 form-group">
                   <label for="city-name-even-one-more">Cuidad</label>
-                  <input type="text" class="form-control" id="city-name-even-one-more" name="cities">
+                  <input type="text" class="form-control" id="city-name-even-one-more" name="cities" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                 </div>
                 <div class="checkbox col-xs-2">
                   <label><input type="checkbox" name="cities">Nacional</label>
@@ -554,11 +554,11 @@
                   <div class="row" data-item="0">
                     <div class="col-xs-3 form-group">
                       <label for="currency-name-even-one-more">Moneda</label>
-                      <input type="text" class="form-control" id="currency-name-even-one-more" name="citiesPrice">
+                      <input type="text" class="form-control" id="currency-name-even-one-more" name="citiesPrice" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                     </div>
                     <div class="col-xs-3 form-group">
                       <label for="price-name-even-one-more">Precio</label>
-                      <input type="text" class="form-control" id="price-name-even-one-more" name="citiesPrice">
+                      <input type="text" class="form-control" id="price-name-even-one-more" name="citiesPrice" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                     </div>
                     <div class="col-xs-2 form-group">
                       <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city-price">
@@ -605,7 +605,7 @@
               <div class="row" data-item="0">
               <div class="form-group col-xs-10">
                 <label for="tpl-terms">Términos y condiciones</label>
-                <input type="text" name="termAndCond" class="form-control" id="tpl-terms" placeholder="Términos y condiciones">
+                <input type="text" name="termAndCond" class="form-control" id="tpl-terms" placeholder="Términos y condiciones" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
               </div>
               <div class="col-xs-2 form-group">
                 <button type="button" title="Agregar otro término o condición" class="btn btn-default btn-success pull-right add-terms add-item">
@@ -625,18 +625,18 @@
 
       <!-- ODD, ONE OR MORE FARE -->
       <div role="tabpanel" class="tab-pane col-xs-12" id="odd-one-more">
-        <form class="form-odd-one-more" data-template="odd-one-more">
+        <form class="form-odd-one-more" data-template="odd-one-more" novalidate="">
           <!-- UTM Language -->
           <fieldset>
             <legend>UTM</legend>
             <div class="row">
               <div class="form-group col-xs-4">
                 <label for="tpl-ecard-name">Folder Name</label>
-                <input type="text" name="ecardName" class="form-control" id="tpl-ecard-name" placeholder="Folder Name">
+                <input type="text" name="ecardName" class="form-control" id="tpl-ecard-name" placeholder="Folder Name" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
               </div>
               <div class="form-group col-xs-4">
                 <label for="tpl-url">UTM</label>
-                <input type="text" name="utm" class="form-control" id="tpl-url" placeholder="UTM">
+                <input type="text" name="utm" class="form-control" id="tpl-url" placeholder="UTM" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
               </div>
               <div class="form-group col-xs-4">
                 <label for="tpl-language">Idioma:</label>
@@ -655,7 +655,7 @@
             <div class="row">
               <div class="col-xs-6 form-group">
                 <label for="tpl-header">Header text</label>
-                <input type="text" name="titleTop" class="form-control" id="tpl-header" placeholder="Header text">
+                <input type="text" name="titleTop" class="form-control" id="tpl-header" placeholder="Header text" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
               </div>
               <div class="col-xs-6"><a href="#" id="">Puedes abrir este mensaje en tu...</a></div>
               <div class="col-xs-12">
@@ -674,7 +674,7 @@
                   <div class="row" data-item="0">
                     <div class="form-group col-xs-10">
                       <label for="tpl-headline">Headline</label>
-                      <input type="text" name="titleBanner" class="form-control" id="tpl-headline" placeholder="Headline">
+                      <input type="text" name="titleBanner" class="form-control" id="tpl-headline" placeholder="Headline" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                     </div>
                     <div class="col-xs-2 form-group">
                       <button type="button" title="Agregar otro headline" class="btn btn-default pull-right add-headline add-item btn-success">
@@ -721,7 +721,7 @@
 
                 <div class="form-group">
                   <label for="tpl-headline-image">Imagen</label>
-                  <input type="file" name="tpl-headline-image" class="form-control image-odd-one-more" id="tpl-headline-image" placeholder="Imagen" accept="image/x-png,image/gif,image/jpeg">
+                  <input type="file" name="tpl-headline-image" class="form-control image-odd-one-more" id="tpl-headline-image" placeholder="Imagen" accept="image/x-png,image/gif,image/jpeg" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                 </div>
                 <img id="img" class="img-preview hidden" src="#" alt="your image" />
 
@@ -771,7 +771,7 @@
               <div class="row" data-item="0">
                 <div class="col-xs-5 form-group">
                   <label for="city-name-odd-one-more">Cuidad</label>
-                  <input type="text" class="form-control" id="city-name-odd-one-more" name="cities">
+                  <input type="text" class="form-control" id="city-name-odd-one-more" name="cities" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                 </div>
                 <div class="col-xs-3 form-group">
                   <label for="sub-city-name-odd-one-more">Sub texto</label>
@@ -790,11 +790,11 @@
                   <div class="row" data-item="0">
                     <div class="col-xs-3 form-group">
                       <label for="currency-name-odd-one-more">Moneda</label>
-                      <input type="text" class="form-control" id="currency-name-odd-one-more" name="citiesPrice">
+                      <input type="text" class="form-control" id="currency-name-odd-one-more" name="citiesPrice" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                     </div>
                     <div class="col-xs-3 form-group">
                       <label for="price-name-odd-one-more">Precio</label>
-                      <input type="text" class="form-control" id="price-name-odd-one-more" name="citiesPrice">
+                      <input type="text" class="form-control" id="price-name-odd-one-more" name="citiesPrice" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                     </div>
                     <div class="col-xs-2 form-group">
                       <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city-price">
@@ -841,7 +841,7 @@
               <div class="row" data-item="0">
               <div class="form-group col-xs-10">
                 <label for="tpl-terms">Términos y condiciones</label>
-                <input type="text" name="termAndCond" class="form-control" id="tpl-terms" placeholder="Términos y condiciones">
+                <input type="text" name="termAndCond" class="form-control" id="tpl-terms" placeholder="Términos y condiciones" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
               </div>
               <div class="col-xs-2 form-group">
                 <button type="button" title="Agregar otro término o condición" class="btn btn-default btn-success pull-right add-terms add-item">
@@ -1129,18 +1129,18 @@
 
       <!-- ECOMONIC OR EXECUTIVE, ODD -->
       <div role="tabpanel" class="tab-pane col-xs-12" id="economic-executive-odd">
-        <form class="form-economic-executive-odd" data-template="economic-executive-odd">
+        <form class="form-economic-executive-odd" data-template="economic-executive-odd" novalidate="novalidate">
           <!-- UTM Language -->
           <fieldset>
             <legend>UTM</legend>
             <div class="row">
               <div class="form-group col-xs-4">
                 <label for="tpl-ecard-name">Folder Name</label>
-                <input type="text" name="ecardName" class="form-control" id="tpl-ecard-name" placeholder="Folder Name">
+                <input type="text" name="ecardName" class="form-control" id="tpl-ecard-name" placeholder="Folder Name" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
               </div>
               <div class="form-group col-xs-4">
                 <label for="tpl-url">UTM</label>
-                <input type="text" name="utm" class="form-control" id="tpl-url" placeholder="UTM">
+                <input type="text" name="utm" class="form-control" id="tpl-url" placeholder="UTM" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
               </div>
               <div class="form-group col-xs-4">
                 <label for="tpl-language">Idioma:</label>
@@ -1159,7 +1159,7 @@
             <div class="row">
               <div class="col-xs-6 form-group">
                 <label for="tpl-header">Header text</label>
-                <input type="text" name="titleTop" class="form-control" id="tpl-header" placeholder="Header text">
+                <input type="text" name="titleTop" class="form-control" id="tpl-header" placeholder="Header text" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
               </div>
               <div class="col-xs-6"><a href="#" id="">Puedes abrir este mensaje en tu...</a></div>
               <div class="col-xs-12">
@@ -1178,7 +1178,7 @@
                   <div class="row" data-item="0">
                     <div class="form-group col-xs-10">
                       <label for="tpl-headline">Headline</label>
-                      <input type="text" name="titleBanner" class="form-control" id="tpl-headline" placeholder="Headline">
+                      <input type="text" name="titleBanner" class="form-control" id="tpl-headline" placeholder="Headline" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                     </div>
                     <div class="col-xs-2 form-group">
                       <button type="button" title="Agregar otro headline" class="btn btn-default pull-right add-headline add-item btn-success">
@@ -1225,7 +1225,7 @@
 
                 <div class="form-group">
                   <label for="tpl-headline-image">Imagen</label>
-                  <input type="file" name="tpl-headline-image" class="form-control image-economic-executive-odd" id="tpl-headline-image" placeholder="Imagen" accept="image/x-png,image/gif,image/jpeg">
+                  <input type="file" name="tpl-headline-image" class="form-control image-economic-executive-odd" id="tpl-headline-image" placeholder="Imagen" accept="image/x-png,image/gif,image/jpeg" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                 </div>
                 <img id="img" class="img-preview hidden" src="#" alt="your image" />
 
@@ -1275,7 +1275,7 @@
               <div class="row" data-item="0">
                 <div class="col-xs-5 form-group">
                   <label for="city-name-odd-one-more">Cuidad</label>
-                  <input type="text" class="form-control" id="city-name-odd-one-more" name="citiesEconomic">
+                  <input type="text" class="form-control" id="city-name-odd-one-more" name="citiesEconomic" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                 </div>
                 <div class="col-xs-3 form-group">
                   <label for="sub-city-name-odd-one-more">Sub texto</label>
@@ -1294,11 +1294,11 @@
                   <div class="row" data-item="0">
                     <div class="col-xs-3 form-group">
                       <label for="currency-name-odd-one-more">Moneda</label>
-                      <input type="text" class="form-control" id="currency-name-odd-one-more" name="citiesPriceEconomic">
+                      <input type="text" class="form-control" id="currency-name-odd-one-more" name="citiesPriceEconomic" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                     </div>
                     <div class="col-xs-3 form-group">
                       <label for="price-name-odd-one-more">Precio</label>
-                      <input type="text" class="form-control" id="price-name-odd-one-more" name="citiesPriceEconomic">
+                      <input type="text" class="form-control" id="price-name-odd-one-more" name="citiesPriceEconomic" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                     </div>
                     <div class="col-xs-2 form-group">
                       <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city-price">
@@ -1314,7 +1314,7 @@
               <div class="row" data-item="0">
                 <div class="col-xs-5 form-group">
                   <label for="city-name-odd-one-more">Cuidad</label>
-                  <input type="text" class="form-control" id="city-name-odd-one-more" name="citiesExecutive">
+                  <input type="text" class="form-control" id="city-name-odd-one-more" name="citiesExecutive" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                 </div>
                 <div class="col-xs-3 form-group">
                   <label for="sub-city-name-odd-one-more">Sub texto</label>
@@ -1333,11 +1333,11 @@
                   <div class="row" data-item="0">
                     <div class="col-xs-3 form-group">
                       <label for="currency-name-odd-one-more">Moneda</label>
-                      <input type="text" class="form-control" id="currency-name-odd-one-more" name="citiesPriceExecutive">
+                      <input type="text" class="form-control" id="currency-name-odd-one-more" name="citiesPriceExecutive" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                     </div>
                     <div class="col-xs-3 form-group">
                       <label for="price-name-odd-one-more">Precio</label>
-                      <input type="text" class="form-control" id="price-name-odd-one-more" name="citiesPriceExecutive">
+                      <input type="text" class="form-control" id="price-name-odd-one-more" name="citiesPriceExecutive" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
                     </div>
                     <div class="col-xs-2 form-group">
                       <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city-price">
@@ -1384,7 +1384,7 @@
               <div class="row" data-item="0">
               <div class="form-group col-xs-10">
                 <label for="tpl-terms">Términos y condiciones</label>
-                <input type="text" name="termAndCond" class="form-control" id="tpl-terms" placeholder="Términos y condiciones">
+                <input type="text" name="termAndCond" class="form-control" id="tpl-terms" placeholder="Términos y condiciones" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
               </div>
               <div class="col-xs-2 form-group">
                 <button type="button" title="Agregar otro término o condición" class="btn btn-default btn-success pull-right add-terms add-item">

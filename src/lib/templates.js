@@ -11,7 +11,7 @@ __p+='<div class="row city-'+
 ((__t=( value ))==null?'':__t)+
 '" name="'+
 ((__t=( typeof(cityName)!== 'undefined' ?  cityName : 'cities' ))==null?'':__t)+
-'"> </div> <div class="col-xs-3 form-group"> <label for="sub-city-name-odd-one-more-'+
+'" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top"> </div> <div class="col-xs-3 form-group"> <label for="sub-city-name-odd-one-more-'+
 ((__t=( value ))==null?'':__t)+
 '">Sub texto</label> <input type="text" class="form-control" id="sub-city-name-odd-one-more-'+
 ((__t=( value ))==null?'':__t)+
@@ -23,9 +23,9 @@ __p+='<div class="row city-'+
 ((__t=( value ))==null?'':__t)+
 '"> <div class="row" data-item="0"> <div class="col-xs-3 form-group"> <label for="currency-name-odd-one-more">Moneda</label> <input type="text" class="form-control" id="currency-name-odd-one-more" name="'+
 ((__t=( typeof(name)!== 'undefined' ?  name : 'citiesPrice' ))==null?'':__t)+
-'"> </div> <div class="col-xs-3 form-group"> <label for="price-name-odd-one-more">Precio</label> <input type="text" class="form-control" id="price-name-odd-one-more" name="'+
+'" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top"> </div> <div class="col-xs-3 form-group"> <label for="price-name-odd-one-more">Precio</label> <input type="text" class="form-control" id="price-name-odd-one-more" name="'+
 ((__t=( typeof(name)!== 'undefined' ?  name : 'citiesPrice' ))==null?'':__t)+
-'"> </div> <div class="col-xs-2 form-group"> <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city-price"> <span class="glyphicon glyphicon-plus"></span> </button> </div> </div> </div> </div> ';
+'" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top"> </div> <div class="col-xs-2 form-group"> <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city-price"> <span class="glyphicon glyphicon-plus"></span> </button> </div> </div> </div> </div> ';
 }
 return __p;
 };
@@ -40,13 +40,13 @@ __p+='<div class="row city-'+
 ((__t=( value ))==null?'':__t)+
 '">Cuidad</label> <input type="text" class="form-control" id="city-name-even-one-more-'+
 ((__t=( value ))==null?'':__t)+
-'" name="cities"> </div> <div class="checkbox col-xs-2"> <label><input type="checkbox" name="cities">Nacional</label> </div> <div class="col-xs-1 form-group"> <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city add-item"> <span class="glyphicon glyphicon-plus"></span> </button> </div> <div class="col-xs-1 form-group"> <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-danger pull-right remove-city remove-item"> <span class="glyphicon glyphicon-minus"></span> </button> </div> <div class="col-xs-12 cities-prices-'+
+'" name="cities" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top"> </div> <div class="checkbox col-xs-2"> <label><input type="checkbox" name="cities">Nacional</label> </div> <div class="col-xs-1 form-group"> <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city add-item"> <span class="glyphicon glyphicon-plus"></span> </button> </div> <div class="col-xs-1 form-group"> <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-danger pull-right remove-city remove-item"> <span class="glyphicon glyphicon-minus"></span> </button> </div> <div class="col-xs-12 cities-prices-'+
 ((__t=( value ))==null?'':__t)+
 '"> <div class="row" data-item="0"> <div class="col-xs-3 form-group"> <label for="currency-name-even-one-more">Moneda</label> <input type="text" class="form-control" id="currency-name-even-one-more" name="'+
 ((__t=( typeof(name)!== 'undefined' ?  name : 'citiesPrice' ))==null?'':__t)+
-'"> </div> <div class="col-xs-3 form-group"> <label for="price-name-even-one-more">Precio</label> <input type="text" class="form-control" id="price-name-even-one-more" name="'+
+'" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top"> </div> <div class="col-xs-3 form-group"> <label for="price-name-even-one-more">Precio</label> <input type="text" class="form-control" id="price-name-even-one-more" name="'+
 ((__t=( typeof(name)!== 'undefined' ?  name : 'citiesPrice' ))==null?'':__t)+
-'"> </div> <div class="col-xs-2 form-group"> <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city-price"> <span class="glyphicon glyphicon-plus"></span> </button> </div> </div> </div> </div> ';
+'" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top"> </div> <div class="col-xs-2 form-group"> <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city-price"> <span class="glyphicon glyphicon-plus"></span> </button> </div> </div> </div> </div> ';
 }
 return __p;
 };
@@ -114,13 +114,13 @@ __p+='<div class="row" data-item="'+
 ((__t=( typeof(name)!== 'undefined' ?  name : 'titlePrice' ))==null?'':__t)+
 '" class="form-control" id="tpl-headline-currency-'+
 ((__t=( value ))==null?'':__t)+
-'" placeholder="Moneda"> </div> <div class="form-group col-xs-5"> <label for="tpl-headline-price-'+
+'" placeholder="Moneda" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top"> </div> <div class="form-group col-xs-5"> <label for="tpl-headline-price-'+
 ((__t=( value ))==null?'':__t)+
 '">Precio</label> <input type="text" name="'+
 ((__t=( typeof(name)!== 'undefined' ?  name : 'titlePrice' ))==null?'':__t)+
 '" class="form-control" id="tpl-headline-price-'+
 ((__t=( value ))==null?'':__t)+
-'" placeholder="Precio"> </div> <div class="col-xs-1 form-group"> <button type="button" title="Agregar precio" class="btn btn-default btn-success pull-right add-headline-price add-item"> <span class="glyphicon glyphicon-plus"></span> </button> </div> <div class="col-xs-1 form-group"> <button type="button" title="Remover precio" class="btn btn-default btn-danger pull-right remove-headline-price remove-item"> <span class="glyphicon glyphicon-minus"></span> </button> </div> </div> ';
+'" placeholder="Precio" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top"> </div> <div class="col-xs-1 form-group"> <button type="button" title="Agregar precio" class="btn btn-default btn-success pull-right add-headline-price add-item"> <span class="glyphicon glyphicon-plus"></span> </button> </div> <div class="col-xs-1 form-group"> <button type="button" title="Remover precio" class="btn btn-default btn-danger pull-right remove-headline-price remove-item"> <span class="glyphicon glyphicon-minus"></span> </button> </div> </div> ';
 }
 return __p;
 };

@@ -250,24 +250,27 @@ $formEconomicExecutiveOdd.on('submit', function (e) {
     objTest;
 
   e.preventDefault();
+  if (eCard.validationForm($(this))) {
+    objTest = eCard.serializeAllOptimized($(this), checkboxs, img);
 
-  objTest = eCard.serializeAllOptimized($(this), checkboxs, img);
+    console.log(objTest);
 
-  console.log(objTest);
-
-  $.ajax({
-    url: '/generate',
-    type: 'POST',
-    data: objTest,
-    datatype: 'json', // expecting JSON to be returned
-    success: function (result) {
-      console.log(result);
-      $folder.text(objTest.ecardName);
-      $success.modal('show');
-    },
-    error: function (result) {
-      console.log(result);
-      $error.modal('show');
-    }
-  });
+    $.ajax({
+      url: '/generate',
+      type: 'POST',
+      data: objTest,
+      datatype: 'json', // expecting JSON to be returned
+      success: function (result) {
+        console.log(result);
+        $folder.text(objTest.ecardName);
+        $success.modal('show');
+      },
+      error: function (result) {
+        console.log(result);
+        $error.modal('show');
+      }
+    });
+    return true;
+  }
+  return false;
 });
