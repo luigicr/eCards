@@ -14,7 +14,7 @@
     </div>
     <!-- TEMPLATE SELECTOR AREA -->
     <div class="row tpl-listbox-container">
-      <div class="col-xs-6">
+      <div class="col-xs-5">
         <h3>Templates E-card Pricing</h3>
         <div class="dropdown" >
           <button class="btn btn-default dropdown-toggle" type="button" id="tpl-listbox-pricing" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
@@ -31,20 +31,15 @@
           </ul>
         </div>
       </div>
-      <div class="col-xs-6">
-        <h3>Templates E-card Pricing Co-branding</h3>
-        <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="tpl-listbox-branding" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Select template
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="tpl-listbox-branding">
-            <li><a href="#" data-toggle="tab">co-branding: un destino, una tarifa </a></li>
-            <li><a href="#" data-toggle="tab" data-toggle="tab">co-branding: destinos impares, una o más tarifas</a></li>
-            <li><a href="#" data-toggle="tab">co-branding: destinos pares, una o más tarifas</a></li>
-            <li><a href="#" data-toggle="tab">co-branding: clase económica o ejecutiva, destinos impares</a></li>
-            <li><a href="#" data-toggle="tab">co-branding: clase económica o ejecutiva, destinos pares</a></li>
-          </ul>
+      <div class="col-xs-7">
+        <h3>Co-branding</h3>
+        <div class="row co-branding">
+          <div class="checkbox col-xs-3">
+            <label><input type="checkbox" class="chk-branding" name="isBranding">Co-branding</label>
+          </div>
+          <div class="col-xs-9">
+            <input type="file" name="coImage" class="co-image form-control hidden" id="co-image" placeholder="Imagen" accept="image/x-png,image/gif,image/jpeg">
+          </div>
         </div>
       </div>
     </div>
@@ -957,7 +952,7 @@
 
                 <div class="form-group">
                   <label for="tpl-headline-image">Imagen</label>
-                  <input type="file" name="tpl-headline-image" class="form-control image-even-one-more" id="tpl-headline-image" placeholder="Imagen" accept="image/x-png,image/gif,image/jpeg">
+                  <input type="file" name="tpl-headline-image" class="form-control image-economic-executive-even" id="tpl-headline-image" placeholder="Imagen" accept="image/x-png,image/gif,image/jpeg">
                 </div>
                 <img id="img" class="img-preview hidden" src="#" alt="your image" />
 

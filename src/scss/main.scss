@@ -1,3 +1,8 @@
+@keyframes showTab {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
 .page-header {
   img {
     margin-right: 5px;
@@ -15,13 +20,15 @@
     margin-top: 25px;
 }
 
-.checkbox {
+.checkbox,
+.tpl-listbox-container .dropdown {
   margin-top: 30px;
 }
 
 .cities-even-one-more,
 .cities-odd-one-more,
-.cities-economic-executive-odd {
+.cities-economic-executive-odd,
+.cities-economic-executive-even {
   padding-left: 15px;
   padding-right: 15px;
 
@@ -34,4 +41,15 @@
       border-top: 1px solid #ccc;
     }
   }
+}
+
+.co-branding {
+  .form-control {
+    margin-top: 25px;
+  }
+}
+
+
+.tab-content > .active {
+  animation: showTab 625ms ease-in-out both;
 }

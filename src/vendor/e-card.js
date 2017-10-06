@@ -5,12 +5,18 @@
   'use strict';
   var test,
     reader,
-    img64;
+    img64,
+    img64Branding,
+    isCobranding,
+    imgCoBrandName;
 
   root.eCard = {
     test: test,
     reader: reader,
     img64: img64,
+    img64Branding: img64Branding,
+    isCobranding: false,
+    imgCoBrandName: imgCoBrandName,
 
     init: function () {
       return;
@@ -111,9 +117,13 @@
 
       // Creates paragrhaps object in correct format
       _.each(city, function (el, index) {
-        formatedPair.push({ text: el,
-          subtext: subcity[index],
-          national: checkboxes[index].value });
+        if (subcity) {
+          formatedPair.push({ text: el,
+            subtext: subcity[index],
+            national: checkboxes[index].value });
+        } else {
+          formatedPair.push({ text: el, national: checkboxes[index].value });
+        }
       });
 
       return formatedPair;
@@ -181,6 +191,7 @@
       });
 
       // Global elements
+      objJSON.imgcobrand = '';
       objJSON.template = form.data('template');
       objJSON.ecardName = this.getValues(serialized, 'ecardName', false, false);
       objJSON.titleTop = this.getValues(serialized, 'titleTop', false);
@@ -193,6 +204,12 @@
       if (img.files[0]) {
         objJSON.img = img.files[0].name;
         objJSON.imgBase64 = this.img64;
+      }
+
+      // check if is co brand template
+      if (this.getCoBranding()) {
+        objJSON.imgcobrand = this.img64Branding;
+        objJSON.imgCoBrandName = this.getImgCoBrandName();
       }
 
       // EXCLUDE CLASE ECONOMICA EJECUTIVA
@@ -212,7 +229,7 @@
 
       // Group economy/executive
       // ONLY DESTINOS PARES CLASE EJECUTIVA Y ECONOMICA
-      if (objJSON.template === 'economic-executive-odd') {
+      if (objJSON.template === 'economic-executive-odd' || objJSON.template === 'economic-executive-even') {
         // Create a function?
         // ECONOMY
         cityTemp = this.getValues(serialized, 'citiesEconomic', true);
@@ -234,9 +251,13 @@
         });
 
         // group in pairs
-        objJSON.economyClass = _.groupBy(cityTemp, function (el, index) {
-          return Math.floor(index / 2);
-        });
+        if (objJSON.template === 'economic-executive-odd') {
+          objJSON.economyClass = _.groupBy(cityTemp, function (el, index) {
+            return Math.floor(index / 2);
+          });
+        } else {
+          objJSON.economyClass = cityTemp;
+        }
 
         // EXECUTIVE
         cityTemp = this.getValues(serialized, 'citiesExecutive', true);
@@ -255,9 +276,13 @@
         });
 
         // group in pairs
-        objJSON.executiveClass = _.groupBy(cityTemp, function (el, index) {
-          return Math.floor(index / 2);
-        });
+        if (objJSON.template === 'economic-executive-odd') {
+          objJSON.executiveClass = _.groupBy(cityTemp, function (el, index) {
+            return Math.floor(index / 2);
+          });
+        } else {
+          objJSON.executiveClass = cityTemp;
+        }
       }
 
       return objJSON;
@@ -597,6 +622,38 @@
 
         reader.readAsDataURL(input.files[0]);
       }
+    },
+
+    // Transform image from input to base64 image
+    // @input: the image input container
+    setImgBranding64: function (input) {
+      var that = this;
+
+      if (input.files && input.files[0]) {
+        reader = new FileReader();
+
+        reader.onload = function (e) {
+          that.img64Branding = e.target.result;
+        };
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    },
+
+    setCoBranding: function (val) {
+      this.isCobranding = val;
+    },
+
+    getCoBranding: function () {
+      return this.isCobranding;
+    },
+
+    setImgCoBrandName: function (val) {
+      this.imgCoBrandName = val.files[0].name;
+    },
+
+    getImgCoBrandName: function () {
+      return this.imgCoBrandName;
     }
   };
 }(window));
@@ -614,5 +671,5 @@
 
   function toSentencesCase(str){
     return str.substring(0, 1).toUpperCase() + str.substring(1, str.length).toLowerCase();
-  }  
+  }
 }(window));

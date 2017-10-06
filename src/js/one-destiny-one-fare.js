@@ -108,6 +108,8 @@ $form.on('submit', function (e) {
 
     objTest = eCard.serializeAll($(this), checkboxs, img);
 
+    console.log(objTest);
+
     $.ajax({
       url: '/generate',
       type: 'POST',

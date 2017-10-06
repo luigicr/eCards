@@ -76,7 +76,18 @@ module.exports = {
     }
 
     // select folder language
-    templateDir = '../tmp-ecards/' + data.language + '/';
+    templateDir = './tmp-ecards/' + data.language + '/';
+
+    // check if is a co brand template
+    if (data.imgcobrand) {
+      templateDir += '/cobrand/';
+
+      image64 = data.imgcobrand.replace(/^data:image\/\w+;base64,/, '');
+      bitmap = new Buffer(image64, 'base64');
+      fs.writeFile(dir + data.imgCoBrandName, bitmap, function (err) {
+        console.log(err);
+      });
+    }
 
     // select corresponding template
     switch (data.template) {
@@ -91,6 +102,9 @@ module.exports = {
         break;
       case 'odd-one-more':
         templateDir += '4-destinos-pares-una-o-más-tarifas.html'
+        break;
+      case 'economic-executive-even':
+        templateDir += '5-clase-económica-o-ejecutiva-destinos-impares.html'
         break;
       case 'economic-executive-odd':
         templateDir += '6-clase-económica-o-ejecutiva-destinos-pares.html'

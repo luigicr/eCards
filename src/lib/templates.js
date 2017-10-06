@@ -40,7 +40,13 @@ __p+='<div class="row city-'+
 ((__t=( value ))==null?'':__t)+
 '">Cuidad</label> <input type="text" class="form-control" id="city-name-even-one-more-'+
 ((__t=( value ))==null?'':__t)+
-'" name="cities" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top"> </div> <div class="checkbox col-xs-2"> <label><input type="checkbox" name="cities">Nacional</label> </div> <div class="col-xs-1 form-group"> <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city add-item"> <span class="glyphicon glyphicon-plus"></span> </button> </div> <div class="col-xs-1 form-group"> <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-danger pull-right remove-city remove-item"> <span class="glyphicon glyphicon-minus"></span> </button> </div> <div class="col-xs-12 cities-prices-'+
+'" name="'+
+((__t=( typeof(cityName)!== 'undefined' ?  cityName : 'cities' ))==null?'':__t)+
+'" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top"> </div> <div class="checkbox col-xs-2"> <label><input type="checkbox" name="'+
+((__t=( typeof(cityName)!== 'undefined' ?  cityName : 'cities' ))==null?'':__t)+
+'">Nacional</label> </div> <div class="col-xs-1 form-group"> <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city add-item"> <span class="glyphicon glyphicon-plus"></span> </button> </div> <div class="col-xs-1 form-group"> <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-danger pull-right remove-city remove-item"> <span class="glyphicon glyphicon-minus"></span> </button> </div> <div class="col-xs-12 cities-prices-'+
+((__t=( value ))==null?'':__t)+
+' cities-prices-even-'+
 ((__t=( value ))==null?'':__t)+
 '"> <div class="row" data-item="0"> <div class="col-xs-3 form-group"> <label for="currency-name-even-one-more">Moneda</label> <input type="text" class="form-control" id="currency-name-even-one-more" name="'+
 ((__t=( typeof(name)!== 'undefined' ?  name : 'citiesPrice' ))==null?'':__t)+
