@@ -1,7 +1,7 @@
 <div class="row city-<%= value %>" data-item="<%= value %>">
   <div class="col-xs-8 form-group">
     <label for="city-name-even-one-more-<%= value %>">Cuidad</label>
-    <input type="text" class="form-control" id="city-name-even-one-more-<%= value %>" name="cities">
+    <input type="text" class="form-control" id="city-name-even-one-more-<%= value %>" name="cities" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
   </div>
   <div class="checkbox col-xs-2">
     <label><input type="checkbox" name="cities">Nacional</label>
@@ -21,11 +21,11 @@
     <div class="row" data-item="0">
       <div class="col-xs-3 form-group">
         <label for="currency-name-even-one-more">Moneda</label>
-        <input type="text" class="form-control" id="currency-name-even-one-more" name="<%= typeof(name)!== 'undefined' ?  name : 'citiesPrice' %>">
+        <input type="text" class="form-control" id="currency-name-even-one-more" name="<%= typeof(name)!== 'undefined' ?  name : 'citiesPrice' %>" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
       </div>
       <div class="col-xs-3 form-group">
         <label for="price-name-even-one-more">Precio</label>
-        <input type="text" class="form-control" id="price-name-even-one-more" name="<%= typeof(name)!== 'undefined' ?  name : 'citiesPrice' %>">
+        <input type="text" class="form-control" id="price-name-even-one-more" name="<%= typeof(name)!== 'undefined' ?  name : 'citiesPrice' %>" required="required" title="Campo requerido" data-toggle="tooltip" data-placement="top">
       </div>
       <div class="col-xs-2 form-group">
         <button type="button" title="Agregar otra cuidad" class="btn btn-default btn-success pull-right add-city-price">

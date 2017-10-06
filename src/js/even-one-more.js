@@ -189,22 +189,25 @@ $formEvenOneMore.on('submit', function (e) {
     objTest;
 
   e.preventDefault();
+  if (eCard.validationForm($(this))) {
+    objTest = eCard.serializeAll($(this), checkboxs, img);
 
-  objTest = eCard.serializeAll($(this), checkboxs, img);
-
-  $.ajax({
-    url: '/generate',
-    type: 'POST',
-    data: objTest,
-    datatype: 'json', // expecting JSON to be returned
-    success: function (result) {
-      console.log(result);
-      $folder.text(objTest.ecardName);
-      $success.modal('show');
-    },
-    error: function (result) {
-      console.log(result);
-      $error.modal('show');
-    }
-  });
+    $.ajax({
+      url: '/generate',
+      type: 'POST',
+      data: objTest,
+      datatype: 'json', // expecting JSON to be returned
+      success: function (result) {
+        console.log(result);
+        $folder.text(objTest.ecardName);
+        $success.modal('show');
+      },
+      error: function (result) {
+        console.log(result);
+        $error.modal('show');
+      }
+    });
+    return true;
+  }
+  return false;
 });

@@ -600,3 +600,19 @@
     }
   };
 }(window));
+
+(function(){
+  $(document).keydown(function(evt){
+      if (evt.keyCode == 77 && (evt.ctrlKey)){
+          evt.preventDefault();
+          $focus = $(document.activeElement);
+          if($focus.attr('type') === 'text'){
+            $focus.val(toSentencesCase($focus.val()))
+          }
+      }
+  });
+
+  function toSentencesCase(str){
+    return str.substring(0, 1).toUpperCase() + str.substring(1, str.length).toLowerCase();
+  }  
+}(window));
